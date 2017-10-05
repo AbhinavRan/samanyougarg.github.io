@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Merutan : Tech Blog for Geeks</title><description>Tutorials, How-To Guides, Software Tips, Gadget and App Reviews and other stuff that matters.</description><link>https://merutan.com/</link><image><url>https://merutan.com/favicon.png</url><title>Merutan : Tech Blog for Geeks</title><link>https://merutan.com/</link></image><generator>Ghost 1.7</generator><lastBuildDate>Sat, 09 Sep 2017 14:10:42 GMT</lastBuildDate><atom:link href="https://merutan.com/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>How to host a Ghost Blog v1.x for Free on Github Pages</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;&lt;a href="https://ghost.org/"&gt;Ghost&lt;/a&gt; is a free, open-source blogging platform known for its simplicity, letting you focus on writing.&lt;/p&gt;
+&lt;p&gt;There is a small hiccup though. If you want to use Ghost Pro(which is similar to &lt;a href="http://Wordpress.com"&gt;Wordpress.com&lt;/a&gt;) for hosting your blog, the basic plan starts at around $20 per month.&lt;/p&gt;
+&lt;p&gt;Originally, my&lt;/p&gt;&lt;/div&gt;</description><link>https://merutan.com/how-to-host-a-ghost-blog-for-free-on-github-pages/</link><guid isPermaLink="false">59a2c4031534c7189b6fd4f7</guid><category>Ghost</category><category>Github Pages</category><category>Blog</category><dc:creator>Samanyou Garg</dc:creator><pubDate>Sun, 27 Aug 2017 09:51:09 GMT</pubDate><media:content url="https://merutan.com/content/images/2017/08/ghost-blog-1.jpg" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://merutan.com/content/images/2017/08/ghost-blog-1.jpg" alt="How to host a Ghost Blog v1.x for Free on Github Pages"&gt;&lt;p&gt;&lt;a href="https://ghost.org/"&gt;Ghost&lt;/a&gt; is a free, open-source blogging platform known for its simplicity, letting you focus on writing.&lt;/p&gt;
+&lt;p&gt;There is a small hiccup though. If you want to use Ghost Pro(which is similar to &lt;a href="http://Wordpress.com"&gt;Wordpress.com&lt;/a&gt;) for hosting your blog, the basic plan starts at around $20 per month.&lt;/p&gt;
+&lt;p&gt;Originally, my Ghost blog was hosted on Heroku for free but Ghost decided to drop support for PostgreSQL(which is the database Heroku provides for free) for versions 1.x and later. You now need to pay around $10 per month for MySQL database if you want to host on Heroku.&lt;/p&gt;
+&lt;p&gt;Solution : Github Pages.&lt;/p&gt;
+&lt;p&gt;Github Pages is a free static site hosting service that allows you to your personal, organisational and other open-source pages.&lt;/p&gt;
+&lt;p&gt;We will also be using a modified working version of a tool called Buster to generate static pages from our Ghost blog since the author of the original tool doesn't support it any more and it's Github repository is filled with issues.&lt;/p&gt;
+&lt;p&gt;So here is my guide on how to setup a Ghost blog and host it on Github Pages with a custom domain.&lt;/p&gt;
+&lt;p&gt;So, let's get started...&lt;/p&gt;
+&lt;h3 id="1installnodejs"&gt;1. Install Node.js&lt;/h3&gt;
+&lt;p&gt;Node.js is the platform which powers Ghost.&lt;br&gt;
+Download and install the latest LTS version for your OS.&lt;br&gt;
+&lt;a href="https://nodejs.org/en/download/"&gt;https://nodejs.org/en/download/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/nodejs.jpg" alt="How to host a Ghost Blog v1.x for Free on Github Pages"&gt;&lt;/p&gt;
+&lt;h3 id="2downloadghost"&gt;2. Download Ghost&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download the latest version of Ghost from &lt;a href="https://ghost.org/developers/"&gt;Ghost Developers&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Extract it somewhere you will remember.&lt;br&gt;
+(I have extracted it to my Desktop)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="3setupghostenvironment"&gt;3. Setup Ghost Environment&lt;/h3&gt;
+&lt;p&gt;Open your terminal and navigate to the extracted folder.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install --production
+npm install -g knex-migrator --save
+knex-migrator reset &amp;amp;&amp;amp; knex-migrator init
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/ghost_environment.jpg" alt="How to host a Ghost Blog v1.x for Free on Github Pages"&gt;&lt;/p&gt;
+&lt;h3 id="4startghostonlocalhost"&gt;4. Start Ghost on localhost&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Now you have ghost successfully set up. Let's start it on the localhost by running &lt;code&gt;npm start&lt;/code&gt;.&lt;br&gt;
+&lt;img src="https://merutan.com/content/images/2017/08/start_ghost.jpg" alt="How to host a Ghost Blog v1.x for Free on Github Pages"&gt;&lt;/li&gt;
+&lt;li&gt;Ghost will now be live at &lt;a href="http://localhost:2368/"&gt;http://localhost:2368/&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/ghost.jpg" alt="How to host a Ghost Blog v1.x for Free on Github Pages"&gt;&lt;/p&gt;
+&lt;h3 id="5configureghost"&gt;5. Configure Ghost&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to &lt;a href="http://localhost:2368/ghost"&gt;http://localhost:2368/ghost&lt;/a&gt; and follow the instructions to set up your blog.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/ghost_setup.jpg" alt="How to host a Ghost Blog v1.x for Free on Github Pages"&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;Create your desired content on the Ghost Admin Panel.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/ghost_admin.jpg" alt="How to host a Ghost Blog v1.x for Free on Github Pages"&gt;&lt;/p&gt;
+&lt;h3 id="6createagithubpagesrepository"&gt;6. Create a Github Pages Repository&lt;/h3&gt;
+&lt;p&gt;Head over to Github and create a repository called &lt;code&gt;username.github.io&lt;/code&gt;. (In my case, &lt;a href="https://samanyougarg.github.io"&gt;samanyougarg.github.io&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/github_pages.jpg" alt="How to host a Ghost Blog v1.x for Free on Github Pages"&gt;&lt;/p&gt;
+&lt;h3 id="7installbuster"&gt;7. Install Buster&lt;/h3&gt;
+&lt;p&gt;Buster is a python package to generate static pages from Ghost blogs.&lt;br&gt;
+Note - If you are on a mac, you first need to install wget using &lt;code&gt;brew install wget&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip install buster&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="8clonegithubrepository"&gt;8. Clone Github Repository&lt;/h3&gt;
+&lt;p&gt;Clone your Github Pages repository inside a sub-folder called static. All your static files will be stored here.&lt;br&gt;
+&lt;code&gt;git clone git@github.com:username/username.github.io.git static&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/ghost_folder.jpg" alt="How to host a Ghost Blog v1.x for Free on Github Pages"&gt;&lt;/p&gt;
+&lt;h3 id="9downloadfixedbusterandupdatescript"&gt;9. Download fixed buster and update script&lt;/h3&gt;
+&lt;p&gt;Download this hacked &lt;a href="https://github.com/samanyougarg/ghost-on-github/blob/master/buster.py"&gt;buster.py&lt;/a&gt; and &lt;a href="https://github.com/samanyougarg/ghost-on-github/blob/master/update.sh"&gt;this script&lt;/a&gt; and put these inside your ghost folder. Open &lt;a href="http://buster.py"&gt;buster.py&lt;/a&gt; using a text editor/code editor and change &lt;a href="http://yourdomain.com"&gt;yourdomain.com&lt;/a&gt; (at lines 136-137) to your github subdomain &lt;a href="http://yourusername.github.io"&gt;yourusername.github.io&lt;/a&gt; or example.tld if you are using a custom domain (In my case &lt;a href="http://merutan.com"&gt;merutan.com&lt;/a&gt;). Also, open update script in a text/code editor and change your domain on line 4. Run &lt;code&gt;chmod u+x update.sh&lt;/code&gt; to give required permissions to your script.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/copy_script_buster.jpg" alt="How to host a Ghost Blog v1.x for Free on Github Pages"&gt;&lt;/p&gt;
+&lt;h3 id="10generatestaticpagesfromyourghostblog"&gt;10. Generate Static Pages from your Ghost blog&lt;/h3&gt;
+&lt;p&gt;Making sure Ghost is running on a terminal window, open another terminal window, navigate to your ghost folder and run &lt;code&gt;./update.sh&lt;/code&gt; to generate static files in the static sub-folder, automatically change your urls in all files and commit and push to your Github repository.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/run_script.jpg" alt="How to host a Ghost Blog v1.x for Free on Github Pages"&gt;&lt;/p&gt;
+&lt;h3 id="11whatdoestheupdatescriptdo"&gt;11. What does the update script do?&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;It generates static pages into your static folder from your blog using modeified buster program.&lt;/li&gt;
+&lt;li&gt;Replaces all localhost urls inside static folder with your urls.&lt;/li&gt;
+&lt;li&gt;Adds, commits and pushes all files in the static folder to your Github repository.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/meru.jpg" alt="How to host a Ghost Blog v1.x for Free on Github Pages"&gt;&lt;/p&gt;
+&lt;p&gt;Your blog will now be published at &lt;a href="http://yourusername.github.io"&gt;yourusername.github.io&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note - It may take upto 10 minutes for your blog to be published at your github pages url.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="12updatingyourblog"&gt;12. Updating your blog&lt;/h3&gt;
+&lt;p&gt;Whenever you want to modify your blog, change the theme or write a new post, you need to run &lt;code&gt;npm start&lt;/code&gt; in a terminal window inside the Ghost folder to start the server. Then you can go to &lt;a href="http://localhost:2368/ghost/"&gt;http://localhost:2368/ghost/&lt;/a&gt; and do whatever you want to.&lt;/p&gt;
+&lt;p&gt;Next open a new terminal window and run &lt;code&gt;./update.sh&lt;/code&gt; to generate new static files and push the changes to your repository. It may take upto 10 minutes to update the website.&lt;/p&gt;
+&lt;h3 id="howtosetupacustomdomainwithgithubpages"&gt;How to set up a custom domain with Github Pages&lt;/h3&gt;
+&lt;p&gt;Go to the DNS Management Page of your Domain Provider and follow these steps -&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Add an 'A' record with Name as '@' and IP address as '192.30.252.153'.&lt;/li&gt;
+&lt;li&gt;Add another 'A' record with Name as '@' and IP address as '192.30.252.154'.&lt;/li&gt;
+&lt;li&gt;Add a 'CNAME' record with Name as 'www' and Domain Name as '&lt;a href="http://yourusername.github.io"&gt;yourusername.github.io&lt;/a&gt;'.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now go to your Github Pages repository -&amp;gt; Settings -&amp;gt; Github Pages -&amp;gt; Custom Domain, input your custom domain and hit 'Save'.&lt;/p&gt;
+&lt;p&gt;Your blog will be live at your custom domain in a few minutes.&lt;/p&gt;
+&lt;p&gt;And that's it. Hope this tutorial helped you.&lt;br&gt;
+Don't forget to &lt;a href="https://github.com/samanyougarg/ghost-on-github"&gt;star and fork my Github repository&lt;/a&gt; and stay tuned to this blog for interesting articles like this one.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://stefanscherer.github.io/setup-ghost-for-github-pages/"&gt;https://stefanscherer.github.io/setup-ghost-for-github-pages/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gist.github.com/alexweber/fdc86aa225e7294c17dfb375e846b599"&gt;https://gist.github.com/alexweber/fdc86aa225e7294c17dfb375e846b599&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Top 5 Best External Hard Drives in India</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Did your computer or laptop run out of storage and you need to store your files, music, videos etc? What will you do now?&lt;/p&gt;
+&lt;p&gt;Well, this is the best time to buy extra storage. For as low as ₹4000, you can add on 1TB (terabyte) of storage to your computer&lt;/p&gt;&lt;/div&gt;</description><link>https://merutan.com/best-external-hard-drives-to-buy-in-india/</link><guid isPermaLink="false">59a2c4031534c7189b6fd4f6</guid><category>hard drive</category><category>india</category><category>top</category><category>best</category><dc:creator>Samanyou Garg</dc:creator><pubDate>Thu, 22 Jun 2017 12:00:00 GMT</pubDate><media:content url="https://merutan.com/content/images/2017/08/radhakrishnadrive.png" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://merutan.com/content/images/2017/08/radhakrishnadrive.png" alt="Top 5 Best External Hard Drives in India"&gt;&lt;p&gt;Did your computer or laptop run out of storage and you need to store your files, music, videos etc? What will you do now?&lt;/p&gt;
+&lt;p&gt;Well, this is the best time to buy extra storage. For as low as ₹4000, you can add on 1TB (terabyte) of storage to your computer or laptop using an external drive. 1 TB is more than enough to hoard lakhs of audio files or hundreds of movie files. Depending on your requirements, there are lots of external hard drives available in the market. But which one to choose?&lt;/p&gt;
+&lt;p&gt;We have researched multiple external hard drives and compiled the following list to help you find the best external drive corresponding to your requirements. So, Keep Calm and Read On.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1 . Seagate Backup Plus Slim&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/seagate.jpg" alt="Top 5 Best External Hard Drives in India"&gt;&lt;/p&gt;
+&lt;p&gt;Seagate Backup Plus Slim is the best external drive for most users because it offers an ideal balance of speed, performance and price. It is affordable, slimmer and lighter than most of its competitors. It supports both Mac and Windows and includes Seagate Dashboard Backup Utility that allows the user to automatically backup their computer when the drive is connected. It comes with a free 200GB OneDrive cloud storage subscription valid for 2 years.&lt;/p&gt;
+&lt;p&gt;It weighs just 159g and is less than 0.5 inches thick. It is available in black, blue, red. The drive offers a lot of capacity (1 TB, 2 TB and 4 TB versions are available). It allows quick file transfer with USB 3.0 connectivity and allows USB 2.0 connectivity as well. It provides USB 3.0 read and write speeds of upto 100 MBps.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Specifications&lt;/em&gt; :&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Capacity : 1TB / 2TB / 4TB&lt;br&gt;
+Connectivity : USB 3.0 (backwards compatible with USB 2.0)&lt;br&gt;
+Dimensions : 11.4 x 7.6 x 1.2 cm&lt;br&gt;
+Weight : 159g&lt;br&gt;
+Warranty : 3 years&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Amazon India&lt;/strong&gt; - &lt;a href="http://amzn.to/2sg9AEc"&gt;1 TB (₹4199)&lt;/a&gt;   &lt;a href="http://amzn.to/2sFDmmF"&gt;2 TB (₹6599)&lt;/a&gt;   &lt;a href="http://amzn.to/2rLmsif"&gt;4 TB (₹₹9999)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Flipkart&lt;/strong&gt; - &lt;a href="http://fkrt.it/jGNzkTuuuN"&gt;1 TB (₹4099)&lt;/a&gt;   &lt;a href="http://fkrt.it/jGRiHTuuuN"&gt;2 TB (₹6865)&lt;/a&gt;   &lt;a href="http://fkrt.it/jGkQVTuuuN"&gt;4 TB (₹9999)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2 . WD My Passport (2016)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/radhakrishna-mypassport.jpg" alt="Top 5 Best External Hard Drives in India"&gt;&lt;/p&gt;
+&lt;p&gt;WD My Passport is an affordable drive that offers outstanding performance. It supports both Windows and Mac but you need to reformat it to use it with a Mac. It includes WD’s SmartWare software that allows the user to automatically backup their computer when the drive is connected. You can easily recover deleted files. It also offers password protection and 256-bit data encryption.&lt;/p&gt;
+&lt;p&gt;It weighs just 245g and is 1.6cm thick. It is available in black, blue, red, orange, white and yellow. The drive offers a lot of capacity (1 TB, 2 TB, 3TB and 4 TB versions are available). It allows quick file transfer with USB 3.0 connectivity and allows USB 2.0 connectivity as well. It provides USB 3.0 read and write speeds of upto 100 MBps.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Specifications :&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Capacity : 1TB / 2TB / 3TB / 4TB&lt;br&gt;
+Connectivity : USB 3.0 (backwards compatible with USB 2.0)&lt;br&gt;
+Dimensions : 11 x 8.2 x 1.6 cm&lt;br&gt;
+Weight : 245g&lt;br&gt;
+Warranty : 3 years&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Amazon India&lt;/strong&gt; - &lt;a href="http://amzn.to/2ti2KN8"&gt;1 TB (₹3999)&lt;/a&gt;   &lt;a href="http://amzn.to/2rGo69J"&gt;2 TB (₹6190)&lt;/a&gt;   &lt;a href="http://amzn.to/2tiaKhe"&gt;3 TB (₹14,449)&lt;/a&gt;   &lt;a href="http://amzn.to/2rLFHs2"&gt;4 TB (₹10,700)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Flipkart&lt;/strong&gt; - &lt;a href="http://fkrt.it/M1ft!!NNNN"&gt;1 TB (₹3999)&lt;/a&gt;   &lt;a href="http://fkrt.it/jGlzwTuuuN"&gt;2 TB (₹7250)&lt;/a&gt;   &lt;a href="http://fkrt.it/M1mue!NNNN"&gt;4 TB (₹9499)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3 . WD Elements&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/radhakrishna-drive.jpg" alt="Top 5 Best External Hard Drives in India"&gt;&lt;/p&gt;
+&lt;p&gt;WD Elements is a compact hard drive that won’t dig a hole in your pocket. It supports both Windows and Mac but you need to reformat it to use it with a Mac. It includes a trial version of WD’s SmartWare software that allows the user to automatically backup their computer when the drive is connected. It doesn’t come with software or hardware encryption.&lt;/p&gt;
+&lt;p&gt;It weighs 272g and is 1.5cm thick. It is available in black. The drive is available in 1 TB and 2 TB variants. It allows file transfer with USB 3.0 connectivity and allows USB 2.0 connectivity as well. It provides low USB 3.0 read and write speeds. There are different variants available online all of which provide the same performance, the only difference being the year of manufacture and available capacity.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Specifications :&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Capacity : 500 GB / 1TB / 2TB&lt;br&gt;
+Connectivity : USB 3.0 (backwards compatible with USB 2.0)&lt;br&gt;
+Dimensions : 11.1 x 8.2 x 1.5 cm&lt;br&gt;
+Weight : 230g / 245g&lt;br&gt;
+Warranty : 3 years / 2 years&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Amazon India&lt;/strong&gt; - &lt;a href="http://amzn.to/2thZVvv"&gt;500 GB (Rs 3740)&lt;/a&gt;   &lt;a href="http://amzn.to/2sFCZbz"&gt;1 TB (₹4299)&lt;/a&gt;   &lt;a href="http://amzn.to/2sgxvDv"&gt;2 TB (₹6379)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Flipkart&lt;/strong&gt; - &lt;a href="http://fkrt.it/M696K!NNNN"&gt;500 GB (₹3499)&lt;/a&gt;   &lt;a href="http://fkrt.it/MXiUK!NNNN"&gt;1 TB (₹3899)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4 . Toshiba Canvio Basics 1TB&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/toshiba-radhakrishna.jpg" alt="Top 5 Best External Hard Drives in India"&gt;&lt;/p&gt;
+&lt;p&gt;Toshiba Canvio Basics is a basic hard drive that is small and portable. It supports Windows only but you can reformat it to use it with a Mac. It does not include any special software to backup the computer or restore deleted files.&lt;/p&gt;
+&lt;p&gt;It weighs 230g and is 1.5cm thick. It is available in black. The drive is available in 1 TB storage. It allows file transfer with USB 3.0 connectivity and allows USB 2.0 connectivity as well. It provides low USB 3.0 read and write speeds.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Specifications :&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Capacity : 500 GB / 1TB / 2TB&lt;br&gt;
+Connectivity : USB 3.0 (backwards compatible with USB 2.0)&lt;br&gt;
+Dimensions : 11.9 x 7.9 x 1.5 cm&lt;br&gt;
+Weight : 230g&lt;br&gt;
+Warranty : 1 year&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Amazon India&lt;/strong&gt; - &lt;a href="http://amzn.to/2sFuAVR"&gt;1 TB (₹3948)&lt;/a&gt;   &lt;a href="http://amzn.to/2ti0RzZ"&gt;2 TB (₹5941)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Flipkart&lt;/strong&gt; - &lt;a href="http://fkrt.it/jG5KMTuuuN"&gt;1 TB (₹4270)&lt;/a&gt;   &lt;a href="http://fkrt.it/M6L5K!NNNN"&gt;2 TB (₹6255)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5 . Lenovo Slim 1TB&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/radhakrishna-lenovo.jpg" alt="Top 5 Best External Hard Drives in India"&gt;&lt;/p&gt;
+&lt;p&gt;Lenovo 1TB external hard drive is a basic hard drive that is slim and compact. It supports Windows only. It does not include any special software to backup the computer or restore deleted files.&lt;/p&gt;
+&lt;p&gt;It weighs 245g and is 1.3cm thick. It is available in black. The drive is available in 1 TB storage. It allows file transfer with USB 3.0 connectivity and allows USB 2.0 connectivity as well. It provides low USB 3.0 read and write speeds.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Specifications :&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Capacity : 1TB / 2TB&lt;br&gt;
+Connectivity : USB 3.0 (backwards compatible with USB 2.0)&lt;br&gt;
+Dimensions : 11.6 x 7.7 x 1.3 cm&lt;br&gt;
+Weight : 245g&lt;br&gt;
+Warranty : 1 year&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Amazon India&lt;/strong&gt; - &lt;a href="http://amzn.to/2sFzQbG"&gt;1 TB (₹3540)&lt;/a&gt;   &lt;a href="http://amzn.to/2ti0RzZ"&gt;2 TB (₹5981)&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>How to Connect to WiFi without Password?</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;In this article, I'll show you a cool trick to connect to a WiFi without Password (using an Android Device). This trick can come in handy when you go to some place where you don't have access to the internet using 3G/4G but WiFi is available, however, there's no&lt;/p&gt;&lt;/div&gt;</description><link>https://merutan.com/how-to-connect-to-wifi-without-password/</link><guid isPermaLink="false">59a2c4031534c7189b6fd4f1</guid><category>How To</category><dc:creator>Samanyou Garg</dc:creator><pubDate>Wed, 21 Jun 2017 08:27:09 GMT</pubDate><media:content url="https://merutan.com/content/images/2017/08/krishna-min.jpg" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://merutan.com/content/images/2017/08/krishna-min.jpg" alt="How to Connect to WiFi without Password?"&gt;&lt;p&gt;In this article, I'll show you a cool trick to connect to a WiFi without Password (using an Android Device). This trick can come in handy when you go to some place where you don't have access to the internet using 3G/4G but WiFi is available, however, there's no one there to tell you the WiFi password.&lt;/p&gt;
+&lt;p&gt;It's really easy to connect to a secure WiFi without a password provided the router supports WPS (which most routers do) using just your Android device.&lt;/p&gt;
+&lt;p&gt;So, let's get into the method:-&lt;/p&gt;
+&lt;p&gt;1 . First, get close to the router.&lt;br&gt;
+2 . Check the router and look for a WPS button. It should be a small button probably on the back of the router. Note - Some routers use Refresh icon to represent WPS.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/wps.jpg" alt="How to Connect to WiFi without Password?"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/wps_icon.jpg" alt="How to Connect to WiFi without Password?"&gt;&lt;/p&gt;
+&lt;p&gt;3 . Make sure that the WPS light is not blinking.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/wps_lights.jpg" alt="How to Connect to WiFi without Password?"&gt;&lt;/p&gt;
+&lt;p&gt;4 . Press the WPS button to turn on the WPS connection.&lt;br&gt;
+5 . Now, head over to your Android device and open WiFi settings.&lt;br&gt;
+6 . Click on 3 dots button and then select Advanced.&lt;br&gt;
+7 . Click on WPS Push Button. Your phone will start looking for an available WPS connection.&lt;br&gt;
+8 . Wait for a few seconds. Your phone will be automatically connected to the WiFi without a Password.&lt;br&gt;
+9 . Enjoy!!&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Fibonacci Sequence in Erlang</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;We’ve seen the Fibonacci example in multiple languages, but none of them purely functional.&lt;/p&gt;
+&lt;p&gt;Erlang is a functional, dynamically-typed language designed to build concurrent, distributed, fault-tolerant systems. It is more than 30 years old however the feature set seems incredibly prescient to the challenges we face in the multi-core&lt;/p&gt;&lt;/div&gt;</description><link>https://merutan.com/fibonacci-sequence-in-erlang/</link><guid isPermaLink="false">59a2c4031534c7189b6fd4f4</guid><category>Programming</category><category>Erlang</category><dc:creator>Samanyou Garg</dc:creator><pubDate>Sun, 14 May 2017 14:28:00 GMT</pubDate><media:content url="https://merutan.com/content/images/2017/08/erlang_fibonacci.jpg" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://merutan.com/content/images/2017/08/erlang_fibonacci.jpg" alt="Fibonacci Sequence in Erlang"&gt;&lt;p&gt;We’ve seen the Fibonacci example in multiple languages, but none of them purely functional.&lt;/p&gt;
+&lt;p&gt;Erlang is a functional, dynamically-typed language designed to build concurrent, distributed, fault-tolerant systems. It is more than 30 years old however the feature set seems incredibly prescient to the challenges we face in the multi-core era today. It has a variety of paradigms that may be foreign to developers that are used to working in object oriented languages, but rather than a problem, things like immutable variables and the lack of loop constructs encourage an elegance in implementation.&lt;/p&gt;
+&lt;p&gt;Let us try few different algorithmic approaches to the Fibonacci sequence in Erlang. A classic example of implementing Fibonacci using recursion is the literal representation of the algorithm, which ends up being rather computationally intensive. It looks elegant but starts getting slow around N = 35. This is because N is recomputed recursively every time it is used!&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-erlang"&gt;fib_algo1(0) -&amp;gt; 0;
+fib_algo1(1) -&amp;gt; 1;
+fib_algo1(N) when N &amp;gt; 0 -&amp;gt; fib_algo1(N-1) + fib_algo1(N-2).
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here's an example of a slightly better algorithm, where each value is accumulated in a list and looked up rather than recomputed. There's also an io: format print statement that returns the final sequence of N numbers. This algorithm is way faster than the inefficient version above.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-erlang"&gt;fib_algo2(1) -&amp;gt; io:format(&amp;quot;~p~n&amp;quot;,[[1]]);
+fib_algo2(2) -&amp;gt; io:format(&amp;quot;~p~n&amp;quot;,[[1,1]]);
+fib_algo2(N) when N &amp;gt; 2 -&amp;gt; 
+    hd( fib_list(N-1,[1,1]) ).
+
+% delegate for numbers greater than 2
+fib_list(1,L) -&amp;gt;
+    io:format(&amp;quot;~p~n&amp;quot;,[lists:reverse(L)]),
+    L.
+fib_list(N,L) -&amp;gt;
+    [H1,H2|_T] = L,
+    fib_list(N-1,[H1 + H2 | L]).
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The 3rd algorithm is the most efficient one. It computes the value but does not store it in a list. It also eliminates the risk of filling up memory with the list of previous numbers.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-erlang"&gt;fib_algo3(1) -&amp;gt; 1;
+fib_algo3(2) -&amp;gt; 1;
+fib_algo3(N) when N &amp;gt; 2 -&amp;gt; fib1(N,1,1).
+
+fib1(3,P1,P2) -&amp;gt; P1 + P2; 
+fib1(N,P1,P2) -&amp;gt;
+fib1(N-1,P2, P1 + P2).
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here are all the 3 algorithms in a module:-&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-erlang"&gt;-module(fibonacci).
+-compile(export_all).
+
+% get nth Fibonacci number without much memory usage
+% quite fast, gets nth number with no list storage
+
+test() -&amp;gt;  
+    13 = fib_algo3(7),
+    13 = fib_algo2(7),
+    13 = fib_algo1(7),
+    done.
+
+fib_algo3(1) -&amp;gt; 1;  
+fib_algo3(2) -&amp;gt; 1;  
+fib_algo3(N) when N &amp;gt; 2 -&amp;gt; fib1(N,1,1).
+
+fib1(3,P1,P2) -&amp;gt; P1 + P2;  
+fib1(N,P1,P2) -&amp;gt;  
+    fib1(N-1,P2, P1 + P2).
+
+% fibonacci sequence made by accumulating values in a list
+fib_algo2(1) -&amp;gt; io:format(&amp;quot;~p~n&amp;quot;,[[1]]);  
+fib_algo2(2) -&amp;gt; io:format(&amp;quot;~p~n&amp;quot;,[[1,1]]);  
+fib_algo2(N) when N &amp;gt; 2 -&amp;gt;  
+    hd( fib_list1(N-1,[1,1]) ).
+
+%delegate for numbers &amp;gt; 2
+fib_list1(1,L) -&amp;gt;  
+    io:format(&amp;quot;~p~n&amp;quot;,[lists:reverse(L)]),
+    L;
+fib_list1(N,L) -&amp;gt;  
+    [H1,H2|_T] = L,
+    fib_list1(N-1,[H1 + H2 | L]).
+
+% inefficient recursive method for fibonacci computation
+% very slow at N = 35
+fib_algo1(0) -&amp;gt; 0;  
+fib_algo1(1) -&amp;gt; 1;  
+fib_algo1(N) when N &amp;gt; 1 -&amp;gt; fib_algo1(N-1) + fib_algo1(N-2). 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content:encoded></item><item><title>What is Machine Learning?</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Machine Learning is the latest buzzword in the Technology industry. It is one of the key technologies that will drive the Next Economy. But, only a small fraction of people really know what it stands for.&lt;/p&gt;
+&lt;p&gt;One might think that machine learning is something profoundly new, however, the reality is&lt;/p&gt;&lt;/div&gt;</description><link>https://merutan.com/what-is-machine-learning/</link><guid isPermaLink="false">59a2c4031534c7189b6fd4ee</guid><category>Machine Learning</category><dc:creator>Samanyou Garg</dc:creator><pubDate>Fri, 10 Feb 2017 04:06:36 GMT</pubDate><media:content url="https://merutan.com/content/images/2017/08/machinelearning.jpg" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://merutan.com/content/images/2017/08/machinelearning.jpg" alt="What is Machine Learning?"&gt;&lt;p&gt;Machine Learning is the latest buzzword in the Technology industry. It is one of the key technologies that will drive the Next Economy. But, only a small fraction of people really know what it stands for.&lt;/p&gt;
+&lt;p&gt;One might think that machine learning is something profoundly new, however, the reality is that the technology has been around for years, it is nearly as old as computing.&lt;/p&gt;
+&lt;p&gt;The tech industry is well acquainted with buzzwords. Each passing year proclaims the advent and popularisation of new catchphrases to which startups attach themselves. Pitch decks and headlines today are losing their mind over “machine learning.” But what does it really mean? Having the fundamental knowledge of what you’re talking about is a good first step, so let’s start with the basics.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Machine Learning in Layman's Terms&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Machine Learning&lt;/strong&gt; is the science that provides computers with the &lt;strong&gt;ability to learn&lt;/strong&gt; and do something without being &lt;strong&gt;explicitly programmed&lt;/strong&gt;.&lt;br&gt;
+Essentially, it is a method of teaching computers to &lt;strong&gt;make and improve predictions&lt;/strong&gt; based on some &lt;strong&gt;data&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In the past decade, machine learning has given us self-driving cars, practical speech recognition, effective web search, and a vastly improved understanding of the human genome. Machine learning is so pervasive today that you probably use it dozens of times a day without knowing it. Many researchers also think it is the best way to make progress towards &lt;strong&gt;human-level AI&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;***Here's a classic example of Machine Learning from &lt;a href="https://www.quora.com/How-do-you-explain-Machine-Learning-and-Data-Mining-to-non-Computer-Science-people"&gt;Quora&lt;/a&gt;***:-&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/mango_shopping-min.jpg" alt="What is Machine Learning?"&gt;&lt;/p&gt;
+&lt;p&gt;1  . Let's say you go to your favourite supermarket one fine day to purchase mangoes. You see mangoes laid out in carts. There are ripe mangoes, over ripe mangoes as well as unripe mangoes. You handpick the mangoes of your choice, weigh them on a weighing scale and pay according to the fixed rate (₹/Kg).&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/select_mango-min.jpg" alt="What is Machine Learning?"&gt;&lt;/p&gt;
+&lt;p&gt;You will most certainly want to pick the sweetest, ideally ripe mangoes. You remember your grandmother saying that bright yellow mangoes are always sweeter than pale yellow ones. So you come up with a simple rule: select the bright yellow mangoes only. You check the colour of the mangoes, pick the bright yellow ones, pay up, and return home. But were you successful in your endeavour of choosing the sweetest mangoes?&lt;/p&gt;
+&lt;p&gt;Nope, not really.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/sour_mango-min.gif" alt="What is Machine Learning?"&gt;&lt;/p&gt;
+&lt;p&gt;You come back from the market and taste the mangoes. Some of them are sour, some are perfect and some are over-ripe. Now, you are worried. Apparently, your grandmother’s wisdom is insufficient in determining the selection of mangoes. You find out that there is more to mangoes than just their colour.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/bright_yellow_mangoes-min.jpg" alt="What is Machine Learning?"&gt;&lt;/p&gt;
+&lt;p&gt;After a lot of thinking (and tasting different types of mangoes), you conclude that the bigger, bright yellow mangoes are the sweetest while the smaller, bright yellow mangoes are sweet only half the time.&lt;/p&gt;
+&lt;p&gt;2  . You are really happy with your findings, and decide to apply this rule the next time you go mango shopping. But the next time when you go to your favourite supermarket, you find that they have already sold all their mangoes and are out of stock. You decide to go to a different supermarket, which sells a different variety of mangoes. Now, you realise that your rule (that big, bright yellow mangoes are the sweetest) is no longer applicable. You have to learn from scratch. You taste different types of mango from this greengrocer and learn that the small, pale yellow ones are in fact the sweetest of them all.&lt;/p&gt;
+&lt;p&gt;3  . One of your relatives visits you from another city. You want to treat her with mangoes. But she doesn’t care about the sweetness of a mango, she only wants the juiciest ones. You run your experiments again, tasting all kinds of mangoes and realise that the softer mangoes are the juiciest ones.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/red_yellow_mangoes-min.jpg" alt="What is Machine Learning?"&gt;&lt;/p&gt;
+&lt;p&gt;4  . You move to a different country. Here, mangoes taste surprisingly different from your home. You learn that the reddish-yellow mangoes are in fact tastier than the yellow ones. So, you need to do all your mango research one more time.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/oranges-min.jpg" alt="What is Machine Learning?"&gt;&lt;/p&gt;
+&lt;p&gt;5  . Your husband/wife hates mangoes. He/She loves oranges instead. Now, you have to go orange shopping. All your accumulated knowledge about mangoes is useless as oranges have different characteristics than mangoes. You need to learn everything about oranges from scratch. You try to learn about the relation between the physical characteristics and the taste of oranges by trying different kinds of oranges but end up spending a lot of time.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Enter computer programs&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now, imagine that all this while, you were explicitly coding a computer program to help you choose your mangoes (or oranges). You would write rules of the following kind:&lt;/p&gt;
+&lt;p&gt;if (colour is bright yellow and size is big and sold by the favourite supermarket):&lt;br&gt;
+  mango is sweet.&lt;/p&gt;
+&lt;p&gt;if (soft):&lt;br&gt;
+  mango is juicy.&lt;/p&gt;
+&lt;p&gt;etc...&lt;/p&gt;
+&lt;p&gt;You would use these rules to choose the mangoes. You could even send someone with this set of rules to buy the mangoes and would be assured that he would pick the mangoes of your choice only.&lt;/p&gt;
+&lt;p&gt;But every time you find something new observation, you have to manually modify your set of rules. You have to understand the complex details of all the factors affecting the quality of mangoes. If the problem gets really complicated, it would be really difficult to make accurate rules manually that cover all the possible types of mangoes.&lt;/p&gt;
+&lt;p&gt;But why waste so much time when you have access to Machine Learning algorithms?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Enter Machine Learning algorithms&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Machine Learning algorithms are an evolved form of normal algorithms. They help make your programs “smarter”, by letting them learn from the data you provide.&lt;/p&gt;
+&lt;p&gt;You take a randomly selected sample of mangoes from the market (Let's call this &lt;strong&gt;training data&lt;/strong&gt;), make a table of the physical characteristics of each mango like shape, size, colour, farming location etc (features), along with the ripeness, juiciness and sweetness of that mango (&lt;strong&gt;output variables&lt;/strong&gt;). You feed this data to the machine learning algorithm, and it learns a model of the relation between a mango’s physical characteristics, and its quality.&lt;/p&gt;
+&lt;p&gt;Next time you go to the market, you measure the characteristics of the mangoes on sale (Let's call this &lt;strong&gt;test data&lt;/strong&gt;) and feed it to the ML algorithm. It will use the model computed earlier to predict which mangoes are ripe, juicy and sweet. The algorithm may internally use rules similar to the rules you manually wrote earlier, or it may use more complex rules, but you don’t need to worry about that.&lt;/p&gt;
+&lt;p&gt;Voila, you can now shop for mangoes with great confidence, without worrying about the details of the selection of mangoes. And you can even make your algorithm improve over time, improving its accuracy as it feeds on more and more training data, and modifies its set of rules whenever it makes a wrong prediction.&lt;/p&gt;
+&lt;p&gt;The best thing about your Machine Learning algorithm is the fact that you can use the same algorithm to train different models, one each for predicting the quality of different kinds of fruits.&lt;/p&gt;
+&lt;p&gt;And that folks, is Machine Learning.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Learning from data&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Data&lt;/strong&gt; is recorded from some real-world phenomenon. What might we want to do with that data?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;1. Prediction - what can we &lt;strong&gt;predict&lt;/strong&gt; about this phenomenon?&lt;br&gt;
+2. Description - how can we &lt;strong&gt;describe/understand&lt;/strong&gt; this phenomenon in a new way?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;How can we extract knowledge from data to help humans take decisions?&lt;br&gt;
+How can we automate decisions from data?&lt;br&gt;
+How can we adapt systems dynamically to enable better user experiences?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;So, what exactly is machine learning?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;✕ Writing code to explicitly do the above tasks.&lt;/p&gt;
+&lt;p&gt;✓ Writing code to make the machine learn how to do the above tasks.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Where does it fit?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/machine_learning.jpg" alt="What is Machine Learning?"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Where is it used?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/self-driving-cars.jpg" alt="What is Machine Learning?"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/amazon.jpg" alt="What is Machine Learning?"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/Face-detection.png" alt="What is Machine Learning?"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/google_assistant.jpg" alt="What is Machine Learning?"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Driving a car&lt;/li&gt;
+&lt;li&gt;Recognising spam emails&lt;/li&gt;
+&lt;li&gt;Recommending books&lt;/li&gt;
+&lt;li&gt;Reading Handwriting&lt;/li&gt;
+&lt;li&gt;Recognising speech, faces etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Wanna learn Machine Learning? Stay connected to my blog.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>HOW TO KNOW WHEN YOUR EMAIL HAS BEEN READ</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Have you ever wanted to know if and when your e-mail gets read by the receiver? Suppose, you applied for a job online and haven’t heard back from them. You might have wondered whether the company received your resume or not.&lt;/p&gt;
+&lt;p&gt;Many a times, when we send an email,&lt;/p&gt;&lt;/div&gt;</description><link>https://merutan.com/how-to-know-when-your-email-has-been-read/</link><guid isPermaLink="false">59a2c4031534c7189b6fd4ef</guid><category>Tutorial</category><category>How To</category><category>Chrome</category><dc:creator>Samanyou Garg</dc:creator><pubDate>Wed, 01 Feb 2017 10:23:46 GMT</pubDate><media:content url="https://merutan.com/content/images/2017/08/maxresdefault.jpg" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://merutan.com/content/images/2017/08/maxresdefault.jpg" alt="HOW TO KNOW WHEN YOUR EMAIL HAS BEEN READ"&gt;&lt;p&gt;Have you ever wanted to know if and when your e-mail gets read by the receiver? Suppose, you applied for a job online and haven’t heard back from them. You might have wondered whether the company received your resume or not.&lt;/p&gt;
+&lt;p&gt;Many a times, when we send an email, we expect a prompt reply and if we don’t receive a reply within the expected timeframe we get curious to know whether the email has been read or not or if it wasn’t even delivered due to some technical error.&lt;/p&gt;
+&lt;p&gt;It is really disappointing that some of the best email services like Gmail don’t have a feature to track when an email has been delivered and when it has been read. However, a Chrome extension called MailTrack comes to the rescue here.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; :- MailTrack works for Gmail users only.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;MailTrack&lt;/strong&gt; is a really useful &lt;strong&gt;Chrome extension&lt;/strong&gt; that lets you know when an email has been delivered and when it has been read by the recipient. Just like WhatsApp, it displays a double tick just next to the email you send. For emails that have been delivered successfully, it displays a single green tick and when the email has been read by the receiver, a double green tick will be displayed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Here are the instructions on how to set up MailTrack to track your emails :-&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Install MailTrack extension&lt;/strong&gt; in Google Chrome from the link below.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://mailtrack.io/"&gt;Download MailTrack Chrome Extension&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/mailtrack1.jpg" alt="HOW TO KNOW WHEN YOUR EMAIL HAS BEEN READ"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Once installed, &lt;strong&gt;grant it the permissions&lt;/strong&gt; to access the gmail account on which you would like to track your emails.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/mailtrack2.jpg" alt="HOW TO KNOW WHEN YOUR EMAIL HAS BEEN READ"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It will ask you to upgrade to Pro version. If you want to upgrade, you can do that otherwise just click on no thanks under Pro features to go to your Gmail account.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/mailtrack3.jpg" alt="HOW TO KNOW WHEN YOUR EMAIL HAS BEEN READ"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click on the &lt;strong&gt;“Update Permissions”&lt;/strong&gt; button on the top of your gmail and give it permissions to send you notifications etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/mailtrack4.jpg" alt="HOW TO KNOW WHEN YOUR EMAIL HAS BEEN READ"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When you send an email the next time, you will see a &lt;strong&gt;“Sent with:MailTrack”&lt;/strong&gt; watermark at the bottom of the mail. Click the remove button to remove it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/mailtrack5.jpg" alt="HOW TO KNOW WHEN YOUR EMAIL HAS BEEN READ"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;After you send the email, navigate to “Sent Mails” tab and you’ll see 2 check marks right beside your sent emails.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Single Green Tick – Email has been delivered to  the recipient.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Double Green Tick – Email has been read by the recipient.&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/mailtrack6.jpg" alt="HOW TO KNOW WHEN YOUR EMAIL HAS BEEN READ"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://merutan.com/content/images/2017/08/mailtrack7.jpg" alt="HOW TO KNOW WHEN YOUR EMAIL HAS BEEN READ"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If this helped you, please bookmark this website for more cool stuff. Also, don’t forget to subscribe to my &lt;a href="https://www.youtube.com/channel/UCc4xH18BfrMTx6R1LCAppUg"&gt;YouTube channel&lt;/a&gt; for cool videos.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Thanks a lot!&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item></channel></rss>

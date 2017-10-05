@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>How to host a Ghost Blog v1.x for Free on Github Pages</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=2ceea8d218">
+    <link rel="stylesheet" type="text/css" href="../assets/css/prism.css?v=2ceea8d218">
+
+    <link rel="shortcut icon" href="../favicon.png" type="image/png">
+    <link rel="canonical">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/">
+    
+    <meta property="og:site_name" content="Merutan : Tech Blog for Geeks">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How to host a Ghost Blog v1.x for Free on Github Pages">
+    <meta property="og:description" content="Ghost is a free, open-source blogging platform known for its simplicity, letting you focus on writing. There is a small hiccup though. If you want to use Ghost Pro(which is similar to Wordpress.com) for hosting your blog, the basic plan starts at around $20 per month. Originally, my">
+    <meta property="og:url" content="https://merutan.com/how-to-host-a-ghost-blog-for-free-on-github-pages/">
+    <meta property="og:image" content="https://merutan.com/content/images/2017/08/ghost-blog-1.jpg">
+    <meta property="article:published_time" content="2017-08-27T09:51:09.000Z">
+    <meta property="article:modified_time" content="2017-08-27T11:27:05.000Z">
+    <meta property="article:tag" content="Ghost">
+    <meta property="article:tag" content="Github Pages">
+    <meta property="article:tag" content="Blog">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/theMerutan">
+    <meta property="article:author" content="https://www.facebook.com/samanyougarg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to host a Ghost Blog v1.x for Free on Github Pages">
+    <meta name="twitter:description" content="Ghost is a free, open-source blogging platform known for its simplicity, letting you focus on writing. There is a small hiccup though. If you want to use Ghost Pro(which is similar to Wordpress.com) for hosting your blog, the basic plan starts at around $20 per month. Originally, my">
+    <meta name="twitter:url" content="https://merutan.com/how-to-host-a-ghost-blog-for-free-on-github-pages/">
+    <meta name="twitter:image" content="https://merutan.com/content/images/2017/08/ghost-blog-1.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Samanyou Garg">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Ghost, Github Pages, Blog">
+    <meta name="twitter:site" content="@theMerutan">
+    <meta name="twitter:creator" content="@samanyougarg">
+    <meta property="og:image:width" content="2560">
+    <meta property="og:image:height" content="1283">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Merutan : Tech Blog for Geeks",
+        "logo": "https://merutan.com/content/images/2017/08/anjaneya.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Samanyou Garg",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/d3bc3273fbbb0bbb5fde7cd369de824a?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://merutan.com/author/samanyougarg/",
+        "sameAs": [
+            "https://www.samanyougarg.com/",
+            "https://www.facebook.com/samanyougarg",
+            "https://twitter.com/samanyougarg"
+        ]
+    },
+    "headline": "How to host a Ghost Blog v1.x for Free on Github Pages",
+    "url": "https://merutan.com/how-to-host-a-ghost-blog-for-free-on-github-pages/",
+    "datePublished": "2017-08-27T09:51:09.000Z",
+    "dateModified": "2017-08-27T11:27:05.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://merutan.com/content/images/2017/08/ghost-blog-1.jpg",
+        "width": 2560,
+        "height": 1283
+    },
+    "keywords": "Ghost, Github Pages, Blog",
+    "description": "Ghost is a free, open-source blogging platform known for its simplicity, letting you focus on writing. There is a small hiccup though. If you want to use Ghost Pro(which is similar to Wordpress.com) for hosting your blog, the basic plan starts at around $20 per month. Originally, my",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://merutan.com/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.js?v=2ceea8d218"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a9756edf043b"
+});
+</script>
+    <meta name="generator" content="Ghost 1.7">
+    <link rel="alternate" type="application/rss+xml" title="Merutan : Tech Blog for Geeks" href="../rss/">
+
+</head>
+<body class="post-template tag-ghost-tag tag-github-pages tag-blog">
+
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+                <a class="site-nav-logo" href="../"><img src="../content/images/2017/08/anjaneya.png" alt="Merutan : Tech Blog for Geeks"></a>
+            <ul class="nav">
+    <li class="nav-home" role="presentation"><a href="../">Home</a></li>
+    <li class="nav-about" role="presentation"><a href="../about/">About</a></li>
+</ul>
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+                <a class="social-link social-link-fb" href="https://www.facebook.com/theMerutan" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+</a>
+                <a class="social-link social-link-tw" href="https://twitter.com/theMerutan" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+</a>
+        </div>
+            <a class="rss-button" href="http://cloud.feedly.com/#subscription/feed/https://merutan.com/feed.rss" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"></circle><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"></path></svg>
+</a>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full post tag-ghost-tag tag-github-pages tag-blog ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2017-08-27">27 August 2017</time>
+                        <span class="date-divider">/</span> <a href="../tag/ghost-tag/">Ghost</a>
+                </section>
+                <h1 class="post-full-title">How to host a Ghost Blog v1.x for Free on Github Pages</h1>
+            </header>
+
+            <figure class="post-full-image" style="background-image: url(../content/images/2017/08/ghost-blog-1.jpg)">
+            </figure>
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown"><p><a href="https://ghost.org/">Ghost</a> is a free, open-source blogging platform known for its simplicity, letting you focus on writing.</p>
+<p>There is a small hiccup though. If you want to use Ghost Pro(which is similar to <a href="http://Wordpress.com">Wordpress.com</a>) for hosting your blog, the basic plan starts at around $20 per month.</p>
+<p>Originally, my Ghost blog was hosted on Heroku for free but Ghost decided to drop support for PostgreSQL(which is the database Heroku provides for free) for versions 1.x and later. You now need to pay around $10 per month for MySQL database if you want to host on Heroku.</p>
+<p>Solution : Github Pages.</p>
+<p>Github Pages is a free static site hosting service that allows you to your personal, organisational and other open-source pages.</p>
+<p>We will also be using a modified working version of a tool called Buster to generate static pages from our Ghost blog since the author of the original tool doesn't support it any more and it's Github repository is filled with issues.</p>
+<p>So here is my guide on how to setup a Ghost blog and host it on Github Pages with a custom domain.</p>
+<p>So, let's get started...</p>
+<h3 id="1installnodejs">1. Install Node.js</h3>
+<p>Node.js is the platform which powers Ghost.<br>
+Download and install the latest LTS version for your OS.<br>
+<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+<p><img src="../content/images/2017/08/nodejs.jpg" alt="nodejs"></p>
+<h3 id="2downloadghost">2. Download Ghost</h3>
+<ol>
+<li>Download the latest version of Ghost from <a href="https://ghost.org/developers/">Ghost Developers</a>.</li>
+<li>Extract it somewhere you will remember.<br>
+(I have extracted it to my Desktop)</li>
+</ol>
+<h3 id="3setupghostenvironment">3. Setup Ghost Environment</h3>
+<p>Open your terminal and navigate to the extracted folder.</p>
+<pre><code>npm install --production
+npm install -g knex-migrator --save
+knex-migrator reset &amp;&amp; knex-migrator init
+</code></pre>
+<p><img src="../content/images/2017/08/ghost_environment.jpg" alt="ghost_environment"></p>
+<h3 id="4startghostonlocalhost">4. Start Ghost on localhost</h3>
+<ol>
+<li>Now you have ghost successfully set up. Let's start it on the localhost by running <code>npm start</code>.<br>
+<img src="../content/images/2017/08/start_ghost.jpg" alt="start_ghost"></li>
+<li>Ghost will now be live at <a href="http://localhost:2368/">http://localhost:2368/</a>.</li>
+</ol>
+<p><img src="../content/images/2017/08/ghost.jpg" alt="ghost"></p>
+<h3 id="5configureghost">5. Configure Ghost</h3>
+<ol>
+<li>Go to <a href="http://localhost:2368/ghost">http://localhost:2368/ghost</a> and follow the instructions to set up your blog.</li>
+</ol>
+<p><img src="../content/images/2017/08/ghost_setup.jpg" alt="ghost_setup"></p>
+<ol start="2">
+<li>Create your desired content on the Ghost Admin Panel.</li>
+</ol>
+<p><img src="../content/images/2017/08/ghost_admin.jpg" alt="ghost_admin"></p>
+<h3 id="6createagithubpagesrepository">6. Create a Github Pages Repository</h3>
+<p>Head over to Github and create a repository called <code>username.github.io</code>. (In my case, <a href="https://samanyougarg.github.io">samanyougarg.github.io</a>)</p>
+<p><img src="../content/images/2017/08/github_pages.jpg" alt="github_pages"></p>
+<h3 id="7installbuster">7. Install Buster</h3>
+<p>Buster is a python package to generate static pages from Ghost blogs.<br>
+Note - If you are on a mac, you first need to install wget using <code>brew install wget</code>.</p>
+<p><code>pip install buster</code></p>
+<h3 id="8clonegithubrepository">8. Clone Github Repository</h3>
+<p>Clone your Github Pages repository inside a sub-folder called static. All your static files will be stored here.<br>
+<code>git clone git@github.com:username/username.github.io.git static</code></p>
+<p><img src="../content/images/2017/08/ghost_folder.jpg" alt="ghost_folder"></p>
+<h3 id="9downloadfixedbusterandupdatescript">9. Download fixed buster and update script</h3>
+<p>Download this hacked <a href="https://github.com/samanyougarg/ghost-on-github/blob/master/buster.py">buster.py</a> and <a href="https://github.com/samanyougarg/ghost-on-github/blob/master/update.sh">this script</a> and put these inside your ghost folder. Open <a href="http://buster.py">buster.py</a> using a text editor/code editor and change <a href="http://yourdomain.com">yourdomain.com</a> (at lines 136-137) to your github subdomain <a href="http://yourusername.github.io">yourusername.github.io</a> or example.tld if you are using a custom domain (In my case <a href="http://merutan.com">merutan.com</a>). Also, open update script in a text/code editor and change your domain on line 4. Run <code>chmod u+x update.sh</code> to give required permissions to your script.</p>
+<p><img src="../content/images/2017/08/copy_script_buster.jpg" alt="copy_script_buster"></p>
+<h3 id="10generatestaticpagesfromyourghostblog">10. Generate Static Pages from your Ghost blog</h3>
+<p>Making sure Ghost is running on a terminal window, open another terminal window, navigate to your ghost folder and run <code>./update.sh</code> to generate static files in the static sub-folder, automatically change your urls in all files and commit and push to your Github repository.</p>
+<p><img src="../content/images/2017/08/run_script.jpg" alt="run_script"></p>
+<h3 id="11whatdoestheupdatescriptdo">11. What does the update script do?</h3>
+<ol>
+<li>It generates static pages into your static folder from your blog using modeified buster program.</li>
+<li>Replaces all localhost urls inside static folder with your urls.</li>
+<li>Adds, commits and pushes all files in the static folder to your Github repository.</li>
+</ol>
+<p><img src="../content/images/2017/08/meru.jpg" alt="meru"></p>
+<p>Your blog will now be published at <a href="http://yourusername.github.io">yourusername.github.io</a>.</p>
+<blockquote>
+<p>Note - It may take upto 10 minutes for your blog to be published at your github pages url.</p>
+</blockquote>
+<h3 id="12updatingyourblog">12. Updating your blog</h3>
+<p>Whenever you want to modify your blog, change the theme or write a new post, you need to run <code>npm start</code> in a terminal window inside the Ghost folder to start the server. Then you can go to <a href="http://localhost:2368/ghost/">http://localhost:2368/ghost/</a> and do whatever you want to.</p>
+<p>Next open a new terminal window and run <code>./update.sh</code> to generate new static files and push the changes to your repository. It may take upto 10 minutes to update the website.</p>
+<h3 id="howtosetupacustomdomainwithgithubpages">How to set up a custom domain with Github Pages</h3>
+<p>Go to the DNS Management Page of your Domain Provider and follow these steps -</p>
+<ol>
+<li>Add an 'A' record with Name as '@' and IP address as '192.30.252.153'.</li>
+<li>Add another 'A' record with Name as '@' and IP address as '192.30.252.154'.</li>
+<li>Add a 'CNAME' record with Name as 'www' and Domain Name as '<a href="http://yourusername.github.io">yourusername.github.io</a>'.</li>
+</ol>
+<p>Now go to your Github Pages repository -&gt; Settings -&gt; Github Pages -&gt; Custom Domain, input your custom domain and hit 'Save'.</p>
+<p>Your blog will be live at your custom domain in a few minutes.</p>
+<p>And that's it. Hope this tutorial helped you.<br>
+Don't forget to <a href="https://github.com/samanyougarg/ghost-on-github">star and fork my Github repository</a> and stay tuned to this blog for interesting articles like this one.</p>
+<p><strong>References</strong></p>
+<ol>
+<li><a href="https://stefanscherer.github.io/setup-ghost-for-github-pages/">https://stefanscherer.github.io/setup-ghost-for-github-pages/</a></li>
+<li><a href="https://gist.github.com/alexweber/fdc86aa225e7294c17dfb375e846b599">https://gist.github.com/alexweber/fdc86aa225e7294c17dfb375e846b599</a></li>
+</ol>
+</div>
+            </section>
+
+            <section class="subscribe-form">
+                <h3 class="subscribe-form-title">Subscribe to Merutan : Tech Blog for Geeks</h3>
+                <p>Get the latest posts delivered right to your inbox</p>
+                <div id="mailchimp">
+                    <form action="http://merutan.us16.list-manage.com/subscribe/post?u=3d659726fab7420b595d348dd&amp;id=2e99b1b1a6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <div id="mc_embed_signup_scroll" class="form-group">
+                        <input style="text-align:center;" type="email" value="" name="EMAIL" class="required email subscribe-email" data-success="Thanks for signing up. Please check your inbox for a confirmation email." id="mce-EMAIL" placeholder="Please enter your email address..." required>
+                        <div id="mce-responses" class="clear">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3d659726fab7420b595d348dd_2e99b1b1a6" tabindex="-1" value=""></div>
+                        <button class type="submit" style="margin-top: 10px;" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+                            <span>Subscribe</span>
+                        </button>
+                    </div>
+                    </form>
+                </div>
+            </section>
+
+            <footer class="post-full-footer">
+
+                <section class="author-card">
+                        <img class="author-profile-image" src="https://www.gravatar.com/avatar/d3bc3273fbbb0bbb5fde7cd369de824a?s=250&amp;d=mm&amp;r=x" alt="Samanyou Garg">
+                    <section class="author-card-content">
+                        <h4 class="author-card-name"><a href="../author/samanyougarg/">Samanyou Garg</a></h4>
+                            <p>I am a Tech Enthusiast, Entrepreneur, Geek, YouTube Partner, and software engineer. I might also be addicted to the internet.</p>
+                    </section>
+                </section>
+                <div class="post-full-footer-right">
+                    <a class="author-card-button" href="../author/samanyougarg/">Read More</a>
+                </div>
+
+            </footer>
+
+
+            <section class="post-full-comments">
+                <div id="disqus_thread"></div>
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = 'https://merutan.com/how-to-host-a-ghost-blog-for-free-on-github-pages/';
+                        this.page.identifier = 'ghost-59a2c4031534c7189b6fd4f7';
+                    };
+                    (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://merutan.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+
+
+
+                <article class="post-card post tag-hard-drive tag-india tag-top tag-best">
+        <a class="post-card-image-link" href="../best-external-hard-drives-to-buy-in-india/">
+            <div class="post-card-image" style="background-image: url(../content/images/2017/08/radhakrishnadrive.png)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="../best-external-hard-drives-to-buy-in-india/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">hard drive</span>
+                <h2 class="post-card-title">Top 5 Best External Hard Drives in India</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Did your computer or laptop run out of storage and you need to store your files, music, videos etc? What will you do now? Well, this is the best time to buy extra</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+                <img class="author-profile-image" src="https://www.gravatar.com/avatar/d3bc3273fbbb0bbb5fde7cd369de824a?s=250&amp;d=mm&amp;r=x" alt="Samanyou Garg">
+            <span class="post-card-author"><a href="../author/samanyougarg/">Samanyou Garg</a></span>
+        </footer>
+    </div>
+</article>
+
+        </div>
+    </div>
+</aside>
+
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="../">
+                <img src="../content/images/2017/08/icon.png" alt="Merutan : Tech Blog for Geeks icon">
+        </a>
+    </div>
+    <div class="floating-header-title">Merutan : Tech Blog for Geeks – How to host a Ghost Blog v1.x for Free on Github Pages</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"></path>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=How%20to%20host%20a%20Ghost%20Blog%20v1.x%20for%20Free%20on%20Github%20Pages&amp;url=https://merutan.com/how-to-host-a-ghost-blog-for-free-on-github-pages/" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://merutan.com/how-to-host-a-ghost-blog-for-free-on-github-pages/" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+        </a>
+        <a class="floating-header-share-wa" href="whatsapp://send?text=https://merutan.com/how-to-host-a-ghost-blog-for-free-on-github-pages/" onclick="window.open(this.href, 'share-whatsapp','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 90 90" style="enable-background:new 0 0 90 90;" xml:space="preserve">
+<g>
+	<path id="WhatsApp" d="M90,43.841c0,24.213-19.779,43.841-44.182,43.841c-7.747,0-15.025-1.98-21.357-5.455L0,90l7.975-23.522   c-4.023-6.606-6.34-14.354-6.34-22.637C1.635,19.628,21.416,0,45.818,0C70.223,0,90,19.628,90,43.841z M45.818,6.982   c-20.484,0-37.146,16.535-37.146,36.859c0,8.065,2.629,15.534,7.076,21.61L11.107,79.14l14.275-4.537   c5.865,3.851,12.891,6.097,20.437,6.097c20.481,0,37.146-16.533,37.146-36.857S66.301,6.982,45.818,6.982z M68.129,53.938   c-0.273-0.447-0.994-0.717-2.076-1.254c-1.084-0.537-6.41-3.138-7.4-3.495c-0.993-0.358-1.717-0.538-2.438,0.537   c-0.721,1.076-2.797,3.495-3.43,4.212c-0.632,0.719-1.263,0.809-2.347,0.271c-1.082-0.537-4.571-1.673-8.708-5.333   c-3.219-2.848-5.393-6.364-6.025-7.441c-0.631-1.075-0.066-1.656,0.475-2.191c0.488-0.482,1.084-1.255,1.625-1.882   c0.543-0.628,0.723-1.075,1.082-1.793c0.363-0.717,0.182-1.344-0.09-1.883c-0.27-0.537-2.438-5.825-3.34-7.977   c-0.902-2.15-1.803-1.792-2.436-1.792c-0.631,0-1.354-0.09-2.076-0.09c-0.722,0-1.896,0.269-2.889,1.344   c-0.992,1.076-3.789,3.676-3.789,8.963c0,5.288,3.879,10.397,4.422,11.113c0.541,0.716,7.49,11.92,18.5,16.223   C58.2,65.771,58.2,64.336,60.186,64.156c1.984-0.179,6.406-2.599,7.312-5.107C68.398,56.537,68.398,54.386,68.129,53.938z" fill="#FFFFFF"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+        </a>
+
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="../">Merutan : Tech Blog for Geeks</a> © 2017</section>
+                <nav class="site-footer-nav">
+                    <a href="../">Latest Posts</a>
+                    <a href="https://www.facebook.com/theMerutan" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/theMerutan" target="_blank">Twitter</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=2ceea8d218"></script>
+    <script type="text/javascript" src="../assets/js/prism.js?v=2ceea8d218"></script>
+
+
+    <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+
+    
+
+</body>
+</html>

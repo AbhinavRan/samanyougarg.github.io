@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Fibonacci Sequence in Erlang</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=2ceea8d218">
+    <link rel="stylesheet" type="text/css" href="../assets/css/prism.css?v=2ceea8d218">
+
+    <link rel="shortcut icon" href="../favicon.png" type="image/png">
+    <link rel="canonical">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/">
+    
+    <meta property="og:site_name" content="Merutan : Tech Blog for Geeks">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Fibonacci Sequence in Erlang">
+    <meta property="og:description" content="We’ve seen the Fibonacci example in multiple languages, but none of them purely functional. Erlang is a functional, dynamically-typed language designed to build concurrent, distributed, fault-tolerant systems. It is more than 30 years old however the feature set seems incredibly prescient to the challenges we face in the multi-core">
+    <meta property="og:url" content="https://merutan.com/fibonacci-sequence-in-erlang/">
+    <meta property="og:image" content="https://merutan.com/content/images/2017/08/erlang_fibonacci.jpg">
+    <meta property="article:published_time" content="2017-05-14T14:28:00.000Z">
+    <meta property="article:modified_time" content="2017-08-27T12:30:19.000Z">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Erlang">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/theMerutan">
+    <meta property="article:author" content="https://www.facebook.com/samanyougarg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fibonacci Sequence in Erlang">
+    <meta name="twitter:description" content="We’ve seen the Fibonacci example in multiple languages, but none of them purely functional. Erlang is a functional, dynamically-typed language designed to build concurrent, distributed, fault-tolerant systems. It is more than 30 years old however the feature set seems incredibly prescient to the challenges we face in the multi-core">
+    <meta name="twitter:url" content="https://merutan.com/fibonacci-sequence-in-erlang/">
+    <meta name="twitter:image" content="https://merutan.com/content/images/2017/08/erlang_fibonacci.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Samanyou Garg">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Programming, Erlang">
+    <meta name="twitter:site" content="@theMerutan">
+    <meta name="twitter:creator" content="@samanyougarg">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Merutan : Tech Blog for Geeks",
+        "logo": "https://merutan.com/content/images/2017/08/anjaneya.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Samanyou Garg",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/d3bc3273fbbb0bbb5fde7cd369de824a?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://merutan.com/author/samanyougarg/",
+        "sameAs": [
+            "https://www.samanyougarg.com/",
+            "https://www.facebook.com/samanyougarg",
+            "https://twitter.com/samanyougarg"
+        ]
+    },
+    "headline": "Fibonacci Sequence in Erlang",
+    "url": "https://merutan.com/fibonacci-sequence-in-erlang/",
+    "datePublished": "2017-05-14T14:28:00.000Z",
+    "dateModified": "2017-08-27T12:30:19.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://merutan.com/content/images/2017/08/erlang_fibonacci.jpg",
+        "width": 1280,
+        "height": 720
+    },
+    "keywords": "Programming, Erlang",
+    "description": "We’ve seen the Fibonacci example in multiple languages, but none of them purely functional. Erlang is a functional, dynamically-typed language designed to build concurrent, distributed, fault-tolerant systems. It is more than 30 years old however the feature set seems incredibly prescient to the challenges we face in the multi-core",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://merutan.com/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.js?v=2ceea8d218"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a9756edf043b"
+});
+</script>
+    <meta name="generator" content="Ghost 1.7">
+    <link rel="alternate" type="application/rss+xml" title="Merutan : Tech Blog for Geeks" href="../rss/">
+
+</head>
+<body class="post-template tag-programming tag-erlang">
+
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+                <a class="site-nav-logo" href="../"><img src="../content/images/2017/08/anjaneya.png" alt="Merutan : Tech Blog for Geeks"></a>
+            <ul class="nav">
+    <li class="nav-home" role="presentation"><a href="../">Home</a></li>
+    <li class="nav-about" role="presentation"><a href="../about/">About</a></li>
+</ul>
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+                <a class="social-link social-link-fb" href="https://www.facebook.com/theMerutan" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+</a>
+                <a class="social-link social-link-tw" href="https://twitter.com/theMerutan" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+</a>
+        </div>
+            <a class="rss-button" href="http://cloud.feedly.com/#subscription/feed/https://merutan.com/feed.rss" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"></circle><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"></path></svg>
+</a>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full post tag-programming tag-erlang ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2017-05-14">14 May 2017</time>
+                        <span class="date-divider">/</span> <a href="../tag/programming/">Programming</a>
+                </section>
+                <h1 class="post-full-title">Fibonacci Sequence in Erlang</h1>
+            </header>
+
+            <figure class="post-full-image" style="background-image: url(../content/images/2017/08/erlang_fibonacci.jpg)">
+            </figure>
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown"><p>We’ve seen the Fibonacci example in multiple languages, but none of them purely functional.</p>
+<p>Erlang is a functional, dynamically-typed language designed to build concurrent, distributed, fault-tolerant systems. It is more than 30 years old however the feature set seems incredibly prescient to the challenges we face in the multi-core era today. It has a variety of paradigms that may be foreign to developers that are used to working in object oriented languages, but rather than a problem, things like immutable variables and the lack of loop constructs encourage an elegance in implementation.</p>
+<p>Let us try few different algorithmic approaches to the Fibonacci sequence in Erlang. A classic example of implementing Fibonacci using recursion is the literal representation of the algorithm, which ends up being rather computationally intensive. It looks elegant but starts getting slow around N = 35. This is because N is recomputed recursively every time it is used!</p>
+<pre><code class="language-erlang">fib_algo1(0) -&gt; 0;
+fib_algo1(1) -&gt; 1;
+fib_algo1(N) when N &gt; 0 -&gt; fib_algo1(N-1) + fib_algo1(N-2).
+</code></pre>
+<p>Here's an example of a slightly better algorithm, where each value is accumulated in a list and looked up rather than recomputed. There's also an io: format print statement that returns the final sequence of N numbers. This algorithm is way faster than the inefficient version above.</p>
+<pre><code class="language-erlang">fib_algo2(1) -&gt; io:format("~p~n",[[1]]);
+fib_algo2(2) -&gt; io:format("~p~n",[[1,1]]);
+fib_algo2(N) when N &gt; 2 -&gt; 
+    hd( fib_list(N-1,[1,1]) ).
+
+% delegate for numbers greater than 2
+fib_list(1,L) -&gt;
+    io:format("~p~n",[lists:reverse(L)]),
+    L.
+fib_list(N,L) -&gt;
+    [H1,H2|_T] = L,
+    fib_list(N-1,[H1 + H2 | L]).
+</code></pre>
+<p>The 3rd algorithm is the most efficient one. It computes the value but does not store it in a list. It also eliminates the risk of filling up memory with the list of previous numbers.</p>
+<pre><code class="language-erlang">fib_algo3(1) -&gt; 1;
+fib_algo3(2) -&gt; 1;
+fib_algo3(N) when N &gt; 2 -&gt; fib1(N,1,1).
+
+fib1(3,P1,P2) -&gt; P1 + P2; 
+fib1(N,P1,P2) -&gt;
+fib1(N-1,P2, P1 + P2).
+</code></pre>
+<p>Here are all the 3 algorithms in a module:-</p>
+<pre><code class="language-erlang">-module(fibonacci).
+-compile(export_all).
+
+% get nth Fibonacci number without much memory usage
+% quite fast, gets nth number with no list storage
+
+test() -&gt;  
+    13 = fib_algo3(7),
+    13 = fib_algo2(7),
+    13 = fib_algo1(7),
+    done.
+
+fib_algo3(1) -&gt; 1;  
+fib_algo3(2) -&gt; 1;  
+fib_algo3(N) when N &gt; 2 -&gt; fib1(N,1,1).
+
+fib1(3,P1,P2) -&gt; P1 + P2;  
+fib1(N,P1,P2) -&gt;  
+    fib1(N-1,P2, P1 + P2).
+
+% fibonacci sequence made by accumulating values in a list
+fib_algo2(1) -&gt; io:format("~p~n",[[1]]);  
+fib_algo2(2) -&gt; io:format("~p~n",[[1,1]]);  
+fib_algo2(N) when N &gt; 2 -&gt;  
+    hd( fib_list1(N-1,[1,1]) ).
+
+%delegate for numbers &gt; 2
+fib_list1(1,L) -&gt;  
+    io:format("~p~n",[lists:reverse(L)]),
+    L;
+fib_list1(N,L) -&gt;  
+    [H1,H2|_T] = L,
+    fib_list1(N-1,[H1 + H2 | L]).
+
+% inefficient recursive method for fibonacci computation
+% very slow at N = 35
+fib_algo1(0) -&gt; 0;  
+fib_algo1(1) -&gt; 1;  
+fib_algo1(N) when N &gt; 1 -&gt; fib_algo1(N-1) + fib_algo1(N-2). 
+</code></pre>
+</div>
+            </section>
+
+            <section class="subscribe-form">
+                <h3 class="subscribe-form-title">Subscribe to Merutan : Tech Blog for Geeks</h3>
+                <p>Get the latest posts delivered right to your inbox</p>
+                <div id="mailchimp">
+                    <form action="http://merutan.us16.list-manage.com/subscribe/post?u=3d659726fab7420b595d348dd&amp;id=2e99b1b1a6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <div id="mc_embed_signup_scroll" class="form-group">
+                        <input style="text-align:center;" type="email" value="" name="EMAIL" class="required email subscribe-email" data-success="Thanks for signing up. Please check your inbox for a confirmation email." id="mce-EMAIL" placeholder="Please enter your email address..." required>
+                        <div id="mce-responses" class="clear">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3d659726fab7420b595d348dd_2e99b1b1a6" tabindex="-1" value=""></div>
+                        <button class type="submit" style="margin-top: 10px;" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+                            <span>Subscribe</span>
+                        </button>
+                    </div>
+                    </form>
+                </div>
+            </section>
+
+            <footer class="post-full-footer">
+
+                <section class="author-card">
+                        <img class="author-profile-image" src="https://www.gravatar.com/avatar/d3bc3273fbbb0bbb5fde7cd369de824a?s=250&amp;d=mm&amp;r=x" alt="Samanyou Garg">
+                    <section class="author-card-content">
+                        <h4 class="author-card-name"><a href="../author/samanyougarg/">Samanyou Garg</a></h4>
+                            <p>I am a Tech Enthusiast, Entrepreneur, Geek, YouTube Partner, and software engineer. I might also be addicted to the internet.</p>
+                    </section>
+                </section>
+                <div class="post-full-footer-right">
+                    <a class="author-card-button" href="../author/samanyougarg/">Read More</a>
+                </div>
+
+            </footer>
+
+
+            <section class="post-full-comments">
+                <div id="disqus_thread"></div>
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = 'https://merutan.com/fibonacci-sequence-in-erlang/';
+                        this.page.identifier = 'ghost-59a2c4031534c7189b6fd4f4';
+                    };
+                    (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://merutan.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+
+
+                <article class="post-card post tag-how-to">
+        <a class="post-card-image-link" href="../how-to-connect-to-wifi-without-password/">
+            <div class="post-card-image" style="background-image: url(../content/images/2017/08/krishna-min.jpg)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="../how-to-connect-to-wifi-without-password/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">How To</span>
+                <h2 class="post-card-title">How to Connect to WiFi without Password?</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>In this article, I'll show you a cool trick to connect to a WiFi without Password (using an Android Device). This trick can come in handy when you go to some place where</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+                <img class="author-profile-image" src="https://www.gravatar.com/avatar/d3bc3273fbbb0bbb5fde7cd369de824a?s=250&amp;d=mm&amp;r=x" alt="Samanyou Garg">
+            <span class="post-card-author"><a href="../author/samanyougarg/">Samanyou Garg</a></span>
+        </footer>
+    </div>
+</article>
+
+                <article class="post-card post tag-machine-learning">
+        <a class="post-card-image-link" href="../what-is-machine-learning/">
+            <div class="post-card-image" style="background-image: url(../content/images/2017/08/machinelearning.jpg)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="../what-is-machine-learning/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">Machine Learning</span>
+                <h2 class="post-card-title">What is Machine Learning?</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Machine Learning is the latest buzzword in the Technology industry. It is one of the key technologies that will drive the Next Economy. But, only a small fraction of people really know what</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+                <img class="author-profile-image" src="https://www.gravatar.com/avatar/d3bc3273fbbb0bbb5fde7cd369de824a?s=250&amp;d=mm&amp;r=x" alt="Samanyou Garg">
+            <span class="post-card-author"><a href="../author/samanyougarg/">Samanyou Garg</a></span>
+        </footer>
+    </div>
+</article>
+
+        </div>
+    </div>
+</aside>
+
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="../">
+                <img src="../content/images/2017/08/icon.png" alt="Merutan : Tech Blog for Geeks icon">
+        </a>
+    </div>
+    <div class="floating-header-title">Merutan : Tech Blog for Geeks – Fibonacci Sequence in Erlang</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"></path>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Fibonacci%20Sequence%20in%20Erlang&amp;url=https://merutan.com/fibonacci-sequence-in-erlang/" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://merutan.com/fibonacci-sequence-in-erlang/" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+        </a>
+        <a class="floating-header-share-wa" href="whatsapp://send?text=https://merutan.com/fibonacci-sequence-in-erlang/" onclick="window.open(this.href, 'share-whatsapp','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 90 90" style="enable-background:new 0 0 90 90;" xml:space="preserve">
+<g>
+	<path id="WhatsApp" d="M90,43.841c0,24.213-19.779,43.841-44.182,43.841c-7.747,0-15.025-1.98-21.357-5.455L0,90l7.975-23.522   c-4.023-6.606-6.34-14.354-6.34-22.637C1.635,19.628,21.416,0,45.818,0C70.223,0,90,19.628,90,43.841z M45.818,6.982   c-20.484,0-37.146,16.535-37.146,36.859c0,8.065,2.629,15.534,7.076,21.61L11.107,79.14l14.275-4.537   c5.865,3.851,12.891,6.097,20.437,6.097c20.481,0,37.146-16.533,37.146-36.857S66.301,6.982,45.818,6.982z M68.129,53.938   c-0.273-0.447-0.994-0.717-2.076-1.254c-1.084-0.537-6.41-3.138-7.4-3.495c-0.993-0.358-1.717-0.538-2.438,0.537   c-0.721,1.076-2.797,3.495-3.43,4.212c-0.632,0.719-1.263,0.809-2.347,0.271c-1.082-0.537-4.571-1.673-8.708-5.333   c-3.219-2.848-5.393-6.364-6.025-7.441c-0.631-1.075-0.066-1.656,0.475-2.191c0.488-0.482,1.084-1.255,1.625-1.882   c0.543-0.628,0.723-1.075,1.082-1.793c0.363-0.717,0.182-1.344-0.09-1.883c-0.27-0.537-2.438-5.825-3.34-7.977   c-0.902-2.15-1.803-1.792-2.436-1.792c-0.631,0-1.354-0.09-2.076-0.09c-0.722,0-1.896,0.269-2.889,1.344   c-0.992,1.076-3.789,3.676-3.789,8.963c0,5.288,3.879,10.397,4.422,11.113c0.541,0.716,7.49,11.92,18.5,16.223   C58.2,65.771,58.2,64.336,60.186,64.156c1.984-0.179,6.406-2.599,7.312-5.107C68.398,56.537,68.398,54.386,68.129,53.938z" fill="#FFFFFF"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+        </a>
+
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="../">Merutan : Tech Blog for Geeks</a> © 2017</section>
+                <nav class="site-footer-nav">
+                    <a href="../">Latest Posts</a>
+                    <a href="https://www.facebook.com/theMerutan" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/theMerutan" target="_blank">Twitter</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=2ceea8d218"></script>
+    <script type="text/javascript" src="../assets/js/prism.js?v=2ceea8d218"></script>
+
+
+    <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+
+    
+
+</body>
+</html>
