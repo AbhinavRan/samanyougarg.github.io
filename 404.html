@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Samanyou Garg</title>
+        <meta name="description" content="Hello! I’m Samanyou Garg. I am a 2nd year Computer Science Student at the University of Manchester. I have an in-depth knowledge of various programming technologies & languages like Java, Python, HTML5, CSS etc. I have a stong background in management and leadership.">
+        <meta name="author" content="Samanyou Garg">
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+        <!-- ============== Resources style ============== -->
+        <link rel="stylesheet" href="stylesheets/styles.css" />
+
+        <!-- Modernizr runs quickly on page load to detect features -->
+        <script src="javascript/modernizr.custom.js"></script>
+    </head>
+    
+    <body>
+
+        <div class="left-part">
+
+            <div class="content">
+
+                <!-- Your logo -->
+                <img src="images/profile/samanyou_garg_flat.jpg" alt="" class="brand-logo" />
+
+                <h1>ERROR <div class="timer"></div></h1>
+
+                <h2>Looks like you may have taken a wrong turn.<br>
+                Don't worry... It happens to the best of us.</h2>
+
+                <div>
+                    <a href="index.html" id="open-more-info" data-target="right-side" class="light-btn">Back Home!</a>
+                    <a data-dialog="somedialog" class="action-btn trigger">Report a Problem</a>
+                </div>
+
+            </div>
+
+            <div class="text-annex">
+                <a href="mailto:samanyugarg@gmail.com"><i class="fa fa-paper-plane"></i></a>
+                <a href="https://www.facebook.com/samanyugarg"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/samanyougarg"><i class="fa fa-twitter"></i></a>
+            </div>
+
+        </div>
+
+        <div class="right-part opacity-0"></div>
+
+        <!-- START - Contact Popup -->
+        <div id="somedialog" class="dialog">
+
+            <div class="dialog__overlay"></div>
+                    
+            <div class="dialog__content">
+                        
+                <div class="dialog-inner">
+                            
+                    <h4>REPORT FORM</h4>
+                            
+                    <p>Couldn't find what you're looking for??<br>
+                         <strong>Let me know what you were after. Thanks!</strong></p>
+
+                    <!-- START - Contact Form -->
+                    <form id="contact-form" name="contact-form" method="POST" data-name="Contact Form">
+
+                        <div class="row">
+
+                            <!-- E-mail -->
+                            <div class="col-xs-12 col-sm-12 col-lg-12">
+                                <div class="form-group">
+                                    <input type="email" id="email" class="form form-control" placeholder="Your Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email'" name="email-address" data-name="Email Address" required>
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="col-xs-12 col-sm-12 col-lg-12 no-padding">
+                                <div class="form-group">
+                                    <textarea id="text-area" class="form textarea form-control" placeholder="Your feedback here... 20 characters Min." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your feedback here... 20 characters Min.'" name="message" data-name="Text Area" required></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Button submit -->
+                        <button type="submit" id="valid-form" class="btn btn-color">Send Message</button>
+        
+                    </form>
+                    <!-- END - Contact Form -->
+                    
+                    <!-- Answer for the contact form is displayed in the next div, do not remove it. -->       
+                    <div id="block-answer">
+
+                        <div id="answer"></div>
+
+                    </div>
+
+                </div>
+                <!-- /. dialog-inner -->
+
+                <!-- Button Cross to close the Contact/Report form Popup -->
+                <button class="close-newsletter" data-dialog-close><i class="icon ion-close-round"></i></button>
+
+            </div>
+            <!-- /. dialog__content -->
+                        
+        </div>
+        <!-- END - Contact Popup -->
+
+    <!-- ///////////////////\\\\\\\\\\\\\\\\\\\ -->
+    <!-- ********** Resources jQuery ********** -->
+    <!-- \\\\\\\\\\\\\\\\\\\/////////////////// -->
+    
+    <!-- * Libraries jQuery, Easing and Bootstrap - Be careful to not remove them * -->
+    <script src="javascript/jquery.min.js"></script>
+    <script src="javascript/jquery.easings.min.js"></script>
+    <script src="javascript/bootstrap.min.js"></script>
+
+    <!-- Plugin used to count down to the target number at a specified speed -->
+    <script src="javascript/jquery.countTo.js"></script>
+
+    <!-- Contact form plugin -->
+    <script src="javascript/contact-me.js"></script>
+
+    <!-- Plugin Background Slideshow -->
+    <script src="javascript/vegas.js"></script>
+
+    <!-- Popup Newsletter Form -->
+    <script src="javascript/classie.js"></script>
+    <script src="javascript/dialogFx.js"></script>
+
+    <!-- Main JS File -->
+    <script src="javascript/main.js"></script>
+    
+    <!--[if lt IE 10]><script type="text/javascript" src="js/placeholder.js"></script><![endif]-->
+
+    </body>
+
+</html>
