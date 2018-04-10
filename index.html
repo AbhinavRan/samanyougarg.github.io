@@ -41,23 +41,21 @@
 </head>
 
 <body>
-
-  <div class="main-loader">
-  <div class="preloader-wrapper big active">
-    <div class="spinner-layer spinner-blue-only">
-      <div class="circle-clipper left">
-        <div class="circle"></div>
+  <div class="page-loader-wrapper">
+          <div class="loader">
+              <div class="preloader">
+                  <div class="spinner-layer pl-red">
+                      <div class="circle-clipper left">
+                          <div class="circle"></div>
+                      </div>
+                      <div class="circle-clipper right">
+                          <div class="circle"></div>
+                      </div>
+                  </div>
+              </div>
+              <p>Please wait...</p>
+          </div>
       </div>
-      <div class="gap-patch">
-        <div class="circle"></div>
-      </div>
-      <div class="circle-clipper right">
-        <div class="circle"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
 
   <nav class="nav-extended x">
     <div class="nav-background">
@@ -725,6 +723,8 @@
           scrollTop: 0
         }, 300);
       })
+
+      setTimeout(function () { $('.page-loader-wrapper').fadeOut(); }, 50);
     });
   </script>
   <script src="javascript/scrollreveal.min.js"></script>
