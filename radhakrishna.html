@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="author" content="Samanyou Garg">
+	<meta name=description content="I’m a 3rd year Computer Science Student at the University of Manchester having an in-depth knowledge of various technologies and a stong background in management and leadership.">
+	<link href="https://plus.google.com/b/108952947437010576278/+SamanyouGarg" rel="publisher" />
+	<meta name=keywords content="samanyou garg, cv, resume, samanyou, garg, radha, krishna, hanuman, computer science, software engineer, sita">
+	<title>Samanyou Garg</title>
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+	<link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+	<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+	<link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+	<meta name="application-name" content="&nbsp;" />
+	<meta name="msapplication-TileColor" content="#FFFFFF" />
+	<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+	<meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+	<meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+	<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+	<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+	<link href="css/bulma.min.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="css/fonts.css" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/extension.css">
+
+	<script>
+
+	document.addEventListener('DOMContentLoaded', function () {
+
+	  var hasClass = function(el, className) {
+			if (el.classList) {
+				return el.classList.contains(className);
+			} else {
+				return new RegExp("\\b" + className + "\\b").test(el.className);
+	    }
+		}
+	  var addClass = function(el, className) {
+			if (el.classList) {
+				return el.classList.add(className);
+			} else if (!hasClass(el, className)) {
+				return (el.className += " " + className);
+			}
+		};
+		var removeClass = function(el, className) {
+			if (el.classList) {
+				return el.classList.remove(className);
+			} else {
+				return (el.className = el.className.replace(
+					new RegExp("\\b" + className + "\\b", "g"),
+					""
+				));
+			}
+		};
+	  var hide = function(el) {
+	  	el.style.display = "none";
+		};
+	  var show = function(el) {
+			el.style.display = "block";
+		};
+	  var click = function(el, handler) {
+			if (!el.eventListener) {
+				el.eventListener = true;
+				return el.addEventListener("click", handler);
+			}
+		};
+	  var toggleTab = function(el) {
+	  	let links = el.target.parentNode.parentNode;
+	  	let linksEl = links.querySelectorAll("li");
+	  	for (let i = 0; i < linksEl.length; i++) {
+	  		let l = linksEl[i];
+	  		removeClass(l, "is-active");
+	  		hide(document.querySelector(l.firstChild.getAttribute("data-tab")));
+	  	}
+	  	addClass(el.target.parentNode, "is-active");
+	  	show(document.querySelector(el.target.getAttribute("data-tab")));
+	  };
+	  var toggleTabMenu = function(el) {
+	  	let links = el.target.parentNode.parentNode;
+	  	let linksEl = links.querySelectorAll("a");
+	  	for (let i = 0; i < linksEl.length; i++) {
+	  		let l = linksEl[i];
+	  		removeClass(l, "is-active");
+	  		hide(document.querySelector(l.getAttribute("data-tab")));
+	  	}
+	  	addClass(el.target, "is-active");
+	  	show(document.querySelector(el.target.getAttribute("data-tab")));
+	  };
+
+
+	  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+	  if ($navbarBurgers.length > 0) {
+	    $navbarBurgers.forEach(function ($el) {
+	      $el.addEventListener('click', function () {
+	        var target = $el.dataset.target;
+	        var $target = document.getElementById(target);
+	        $el.classList.toggle('is-active');
+	        $target.classList.toggle('is-active');
+
+	      });
+	    });
+	  }
+
+
+	  var $tabs = Array.prototype.slice.call(document.querySelectorAll('.tabs'), 0);
+	  if ($tabs && $tabs.length > 0) {
+	    $tabs.forEach(function ($el) {
+	      targets = $el.querySelectorAll('[data-tab]');
+	      // console.log('targets', targets);
+	      for (j = 0, len1 = targets.length; j < len1; j++) {
+	        target = targets[j];
+	        tab = document.querySelector(target.getAttribute('data-tab'));
+	        // console.log('tab', tab)
+	        if (hasClass(target.parentNode, 'is-active') === false) {
+	          hide(tab);
+	        }
+	        click(target, toggleTab);
+	      }
+	    });
+	  }
+
+	  // these are side menus that act like tabs
+	  var $tabMenus = Array.prototype.slice.call(document.querySelectorAll('.tab-menu'), 0);
+	  if ($tabMenus && $tabMenus.length > 0) {
+	    $tabMenus.forEach(function ($el) {
+	      targets = $el.querySelectorAll('[data-tab]');
+	      // console.log('targets', targets);
+	      for (j = 0, len1 = targets.length; j < len1; j++) {
+	        target = targets[j];
+	        tabs = document.querySelector(target.getAttribute('data-tab'));
+	        if (tabs.length) { // selector is a class, it has many
+	          tabs.forEach(function (tab) {
+	            if (hasClass(target.parentNode, 'is-active') === false) {
+	              hide(tab);
+	            }
+	          })
+	        } else { // selector is an ID, it has one
+	          if (hasClass(target.parentNode, 'is-active') === false) {
+	            hide(tab);
+	          }
+	        }
+
+	        click(target, toggleTabMenu);
+	      }
+	    });
+	  }
+
+	});
+
+	</script>
+
+</head>
+
+<body data-gr-c-s-loaded="true">
+
+	<main>
+		<nav class="MainMenu navbar is-transparent">
+		  <div class="navbar-brand">
+		    <a class="navbar-item" href="/">
+		      <img src="images/samanyougarg.png" alt="Samanyou Garg">
+		    </a>
+		    <div class="navbar-burger burger" data-target="main-menu">
+		      <span></span>
+		      <span></span>
+		      <span></span>
+		    </div>
+		  </div>
+
+		  <div class="navbar-menu" id="main-menu">
+		    <div class="navbar-start">
+		    </div>
+
+		    <div class="navbar-end">
+		      <div class="navbar-item">
+		        <div class="field is-grouped">
+		          <p class="control">
+		            <a class="button sam-Button" href="Samanyou_Garg_CV.pdf">
+		              <span>Download CV</span>
+		            </a>
+		          </p>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</nav>
+
+		<div class="MainHero">
+		  <div id="angles" class="">
+		    <div class="animals"></div>
+		    <span></span>
+		    <span></span>
+		    <span></span>
+		    <span></span>
+		    <span></span>
+		  </div>
+		  <section class="hero is-medium">
+		    <div class="hero-body">
+		      <div class="container">
+		  			<div class="columns">
+		  				<div class="column is-6">
+		    	      <h2 class="title">
+									<span>Hi there!</span>
+									<span>I am Samanyou Garg.</span>
+		    	      </h2>
+		    	      <p class="">
+									I am a 3rd year Computer Science Student at the University of Manchester. I have an in-depth knowledge of various programming
+									technologies like Python, HTML5, CSS etc. I also have a stong background in management and leadership.
+		    	      </p>
+		            <p>
+		              <br>
+									<a href="Samanyou_Garg_CV.pdf" class="button sam-Button">Download CV</a>
+									<a href="#contact" class="button sam-Button">Contact Me</a>
+		            </p>
+		  				</div>
+
+		  			</div>
+		      </div>
+
+		    </div>
+		  </section>
+		</div>
+
+		<div class="Mockups">
+		  <img src="images/device.png" alt="Pollygot">
+		</div>
+
+		<div class="Bundle hero">
+
+		  <div class="hero-body">
+
+		  <div class="container">
+				<div class="blurb">
+					<div class="columns has-text-centered is-centered">
+						<div class="column is-8">
+							<h3 class="title">Skills</h3>
+							<p>
+								Pollygot solves the repetitive problems that techies face.
+								<br> Stop focusing on your team. Start focusing on your business.
+							</p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="has-horizontal-scroll has-text-centered">
+					<div class="scrolling-wrapper-flexbox">
+						<div class="feature-card ">
+							<figure class="image is-64x64">
+								<img src="images/code.svg" alt="Programming Languages">
+							</figure>
+							<h5>Programming Languages</h5>
+							<p>
+								Python, Java, HTML, CSS, Javascript, C, SQL, Matlab, Prolog.
+							</p>
+						</div>
+
+						<div class="feature-card ">
+							<figure class="image is-64x64">
+								<img src="images/tools.svg" alt="Tools">
+							</figure>
+							<h5>Tools</h5>
+							<p>
+								Bash, Jupyter, Microsoft Office, Latex, IntelliJ, Atom, Eclipse, Sublime Text, Docker, MySQL, Postgres, Redis, Apache, Nginx, Shell.
+							</p>
+						</div>
+
+
+						<div class="feature-card ">
+							<figure class="image is-64x64">
+								<img src="images/cloud.svg" alt="Cloud Platforms">
+							</figure>
+							<h5>Cloud Platforms</h5>
+							<p>
+								AWS, Google Cloud, Heroku, DigitalOcean.
+							</p>
+						</div>
+
+
+						<div class="feature-card ">
+							<figure class="image is-64x64">
+								<img src="images/os.svg" alt="Operating Systems">
+							</figure>
+							<h5>Operating Systems</h5>
+							<p>
+								Mac, Windows, Linux.
+							</p>
+						</div>
+
+						<div class="feature-card ">
+							<figure class="image is-64x64">
+								<img src="images/git.svg" alt="Version Control">
+							</figure>
+							<h5>Version Control</h5>
+							<p>
+								Git, Jira, Jenkins, Travis.
+							</p>
+						</div>
+						<div class="padder-card "></div>
+					</div>
+				</div>
+		  </div>
+		</div>
+
+
+		<div class="Projects section">
+
+
+		    <div class="container">
+		      <div class="section-header columns has-text-centered is-centered is-hidden-tablet">
+		        <div class="column is-6">
+		          <h3 class="title">Projects</h3>
+		        </div>
+		      </div>
+
+		      <div class="columns">
+
+		        <div class="ProjectMenu column is-3 is-hidden-mobile">
+		          <aside class="menu tab-menu">
+		            <h3 class="title">Projects</h3>
+		            <ul class="menu-list">
+		              <li class="is-active"><a class="is-active" data-tab="#tab-bhagavadgita">BhagavadGita.io</a></li>
+		              <li><a data-tab="#tab-rest-api">Flask Example REST API</a></li>
+		              <li><a data-tab="#tab-wallpapers">Wallmob Wallpapers</a></li>
+		              <li><a data-tab="#tab-hanuman">HanumanChalisa.net</a></li>
+		              <!-- <li><a data-tab="#tab-seo">Google Rankings</a></li>
+		              <li><a data-tab="#tab-data">Data pipeline</a></li>
+		              <li><a data-tab="#tab-multitenant">Multi-tenant</a></li> -->
+		            </ul>
+		        </aside></div>
+		        <div class="column">
+
+		          <div class="ProjectTabs tabs is-hidden-tablet">
+		            <ul>
+		              <li class="is-active"><a data-tab="#tab-bhagavadgita">
+		                BhagavadGita.io
+		              </a></li>
+		              <li><a data-tab="#tab-rest-api">Flask Example REST API</a></li>
+		              <li><a data-tab="#tab-wallpapers">Wallmob Wallpapers</a></li>
+		              <li><a data-tab="#tab-hanuman">HanumanChalisa.net</a></li>
+		              <!-- <li><a data-tab="#tab-seo">Google Rankings</a></li>
+		              <li><a data-tab="#tab-data">Data pipeline</a></li>
+		              <li><a data-tab="#tab-multitenant">Multi-tenant</a></li> -->
+		            </ul>
+		          </div>
+
+		          <div class="tab-content has-text-centered">
+		            <div class="content" id="tab-bhagavadgita">
+									<p><strong>The Bhagavad Gita Online in a simple, beautiful and easy to use interface.</strong></p>
+									<p>
+										• Flask + Postgres Backend &nbsp;
+										• REST API (Best Practices + OAuth2 + OpenAPI Spec) &nbsp;
+										<br>
+										• Elasticsearch (for full-text search) &nbsp;
+										• Material Design &nbsp;
+										• Progressive Web App &nbsp;
+									</p>
+									<a class="button sam-Button" href="https://bhagavadgita.io">
+										<span class="icon is-small">
+											<i class="fa fa-info-circle"></i>
+										</span>
+										<span>Visit Website</span>
+									</a>
+									<a class="button sam-Button" href="https://github.com/gita/BhagavadGita">
+										<span class="icon is-small">
+											<i class="fa fa-github"></i>
+										</span>
+										<span>Github</span>
+									</a>
+		              <img src="images/bhagavadgita.png" alt="Bhagavad Gita">
+		            </div>
+		            <div class="content" id="tab-rest-api" style="display: none;">
+									<p><strong>Example API in Flask that follows REST API Best Practices.</strong></p>
+									<p>
+										• Flask + Postgres &nbsp; 
+										• OAuth2 Authentication &nbsp;
+										<br> 
+										• OpenAPI Specification &nbsp; 
+										• Swagger Docs &nbsp; 
+									</p>
+									<a class="button sam-Button" href="https://restapi.samanyougarg.com">
+										<span class="icon is-small">
+											<i class="fa fa-info-circle"></i>
+										</span>
+										<span>Visit Website</span>
+									</a>
+									<a class="button sam-Button" href="https://github.com/samanyougarg/rest-api-example">
+										<span class="icon is-small">
+											<i class="fa fa-github"></i>
+										</span>
+										<span>Github</span>
+									</a>
+		              <img src="images/restapi.png" alt="Flask Example REST API">
+		            </div>
+		            <div class="content" id="tab-hanuman" style="display: none;">
+									<p><strong>Online portal for the devotees of Lord Hanuman to stay devoted to Him by reading, chanting and singing His prayers, mantras and bhajans.</strong></p>
+									<p>
+										• Ranked on Google Page 1 for the top keywords on this topic. &nbsp; 
+										<br>
+										• Progressive Web App. &nbsp;
+										• AMP enabled. &nbsp; 
+									</p>
+									<a class="button sam-Button" href="https://hanumanchalisa.net">
+										<span class="icon is-small">
+											<i class="fa fa-info-circle"></i>
+										</span>
+										<span>Visit Website</span>
+									</a>
+		              <img src="images/hanumanchalisa.png" alt="HanumanChalisa">
+		            </div>
+		            <div class="content" id="tab-wallpapers" style="display: none;">
+		              <p><strong>Cloud based android wallpaper app providing users custom made, unique and innovative wallpapers of all variety on a single
+									platform.</strong></p>
+									<a class="button sam-Button" href="https://play.google.com/store/apps/details?id=com.appisode.wallmob">
+										<span class="icon is-small">
+											<i class="fa fa-info-circle"></i>
+										</span>
+										<span>Visit Website</span>
+									</a>
+		              <img src="images/wallmob.png" alt="Wallmob">
+		            </div>
+		            <!-- <div class="content" id="tab-seo" style="display: none;">
+		              <p>Track your performance on Google and get suggestions to improve your rankings.</p>
+		              <img src="images/seo.png" alt="Emails">
+		            </div>
+		            <div class="content" id="tab-data" style="display: none;">
+		              <p>Pipe your data to multiple sources from the backend.</p>
+		              <img src="images/analytics.png" alt="Multitenant">
+		            </div>
+		            <div class="content" id="tab-multitenant" style="display: none;">
+		              <p>All your sites under a single account. Starting a new blog takes just 20 seconds.</p>
+		              <img src="images/multitenant.png" alt="Multitenant">
+		            </div> -->
+		          </div>
+		        </div>
+
+		      </div>
+		    </div>
+		</div>
+
+	<div class="Education section">
+
+			<div class="container">
+
+				<div class="columns is-centered  has-text-centered">
+					<div class="column is-6">
+								<h3 class="title">Education</h3>
+								<div class="timeline is-centered">
+									<header class="timeline-header">
+										<span class="tag is-medium is-warning">Present</span>
+									</header>
+									<div class="timeline-item is-warning">
+										<div class="timeline-marker is-warning is-icon">
+											<i class="fa fa-university"></i>
+										</div>
+										<div class="timeline-content">
+											<p class="heading">Sept 2015 - Present</p>
+											<p>Bachelor’s Degree (3rd Year in progress)</p>
+										</div>
+									</div>
+									<div class="timeline-item is-danger">
+										<div class="timeline-marker is-danger is-icon">
+											<i class="fa fa-book"></i>
+										</div>
+										<div class="timeline-content">
+											<p class="heading">April 2011 - Mar 2015</p>
+											<p>High School (Topped with 10 out of 10 CGPA)</p>
+										</div>
+									</div>
+									<div class="timeline-item is-success">
+										<div class="timeline-marker is-success is-icon">
+											<i class="fa fa-flag"></i>
+										</div>
+										<div class="timeline-content">
+											<p class="heading">March 2008 - March 2011</p>
+											<p>Middle School (Topped with 95.3 % marks)</p>
+										</div>
+									</div>
+									<header class="timeline-header">
+										<span class="tag is-medium is-success">Start</span>
+									</header>
+								</div>
+					</div>
+
+					<div class="is-divider-vertical"></div>
+
+					<div class="column is-6">
+								<h3 class="title">Work Experience</h3>
+								<div class="timeline is-centered">
+									<header class="timeline-header">
+										<span class="tag is-medium is-warning">Present</span>
+									</header>
+									<div class="timeline-item is-warning">
+										<div class="timeline-marker is-warning is-icon">
+											<i class="fa fa-code"></i>
+										</div>
+										<div class="timeline-content">
+											<p class="heading">July 2017 - Present</p>
+											<p>Application Developer - Vertex Pharmaceuticals</p>
+										</div>
+									</div>
+									<div class="timeline-item is-danger">
+										<div class="timeline-marker is-danger is-icon">
+											<i class="fa fa-file-code-o"></i>
+										</div>
+										<div class="timeline-content">
+											<p class="heading">June 2016 - Sept 2016</p>
+											<p>Founder &amp; App Developer - Appisode Studios</p>
+										</div>
+									</div>
+									<div class="timeline-item is-link">
+										<div class="timeline-marker is-link is-icon">
+											<i class="fa fa-server"></i>
+										</div>
+										<div class="timeline-content">
+											<p class="heading">June 2016 - Sept 2016</p>
+											<p>Developer - CRIS (A Govt. of India undertaking)</p>
+										</div>
+									</div>
+									<div class="timeline-item is-success">
+										<div class="timeline-marker is-success is-icon">
+											<i class="fa fa-mobile"></i>
+										</div>
+										<div class="timeline-content">
+											<p class="heading">Dec 2015 - Jan 2016</p>
+											<p>Frontend Developer - CRIS (A Govt. of India undertaking)</p>
+										</div>
+									</div>
+									<header class="timeline-header">
+										<span class="tag is-medium is-success">Start</span>
+									</header>
+								</div>
+							</div>
+
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="section has-text-centered" style="z-index:9;position:relative;margin-bottom:-50px;">
+			<h3 class="title">Contact</h3>
+		</div>
+
+
+		<div class="Contact section" id="contact">
+		    <div class="container">
+		      <div class="columns is-centered ">
+		        <div class="column is-4">
+							<form method="post" action="https://formspree.io/me@samanyougarg.com">
+		            <div class="field">
+		              <div class="control">
+		                <input class="input" placeholder="Full Name *" type="text" name="name" id="name" required>
+		              </div>
+		            </div>
+		            <div class="field">
+		              <div class="control">
+		                <input class="input" placeholder="Subject *" name="subject" id="subject" required>
+		              </div>
+		            </div>
+		            <div class="field">
+		              <div class="control">
+		                <input class="input required email" placeholder="Email *" type="email" value="" name="email" id="email" required>
+		              </div>
+								</div>
+								<div class="field">
+									<div class="control">
+										<textarea class="input" placeholder="Message *" name="message" id="message" required></textarea>
+									</div>
+								</div>
+		            <div class="field">
+		              <div class="control has-text-right">
+		                <button class="sam-Button button" type="submit" value="Submit">Send</button>
+		              </div>
+		            </div>
+		          </form>
+		        </div>
+		      </div>
+		    </div>
+		</div>
+
+		<footer class="MainFooter footer">
+		  <div class="container">
+		  <div class="has-text-centered">
+				<small>Copyright © 2018 Samanyou Garg | All rights reserved by Samanyou Garg</small>
+		  </div>
+
+		  </div>
+		</footer>
+
+	</main>
+
+</body>
+
+</html>
