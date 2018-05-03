@@ -141,30 +141,6 @@ main {
     width: 50px;
     height: 350px; }
 
-.MainHero {
-  position: relative; }
-  .MainHero h2, .MainHero p {
-    color: #fff;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }
-  .MainHero h2 span {
-    display: block;
-    margin-bottom: 10px; }
-  .MainHero #angles {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transform: skewY(-12deg);
-    transform-origin: 0;
-    position: absolute;
-    box-shadow: inset 0 -10px 80px -10px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(150deg, #FFC107 15%, #FF9800 50%, #F57C00 94%);
-    }
-  .MainHero .animals {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: url("https://d33wubrfki0l68.cloudfront.net/assets/images/b0fd0cf4bbc8fcfe961010531926730c2c642254/animals.png") no-repeat center center fixed;
-    background-size: cover; }
 
 .Mockups {
   z-index: 1;
