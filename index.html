@@ -749,11 +749,10 @@
 	$(document).ready(function () {
 		//Preloader
 		$(window).on("load", function () {
-			setTimeout(function hidePreloader () {
+			setTimeout(function () {
 				var preloader = $('.spinner-wrapper');
 				preloader.remove()
 			}, 500);
-			hidePreloader();
 		});
 	});
 
