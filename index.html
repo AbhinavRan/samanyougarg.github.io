@@ -748,11 +748,9 @@
 <script>
 	$(document).ready(function () {
 		//Preloader
-		$(window).on("load", function () {
-			setTimeout(function () {
-				$('#preloader').remove()
-			}, 500);
-		});
+		setTimeout(function () {
+			$('#preloader').remove()
+		}, 500);
 	});
 
 	$("#display-modal-1").click(function() {
