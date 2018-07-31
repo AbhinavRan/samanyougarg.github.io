@@ -166,7 +166,7 @@
 
 <body data-gr-c-s-loaded="true">
 
-<div class="spinner-wrapper">
+<div class="spinner-wrapper" id="preloader">
 	<div class="spinner"></div>
 </div>
 
@@ -374,8 +374,8 @@
 									<p>
 										<strong>
 											<i>Bhagavad Gita is a 700-verse Hindu scripture in Sanskrit and is universally regarded as the single most influential philosophical text that provides an ultimate guide to self-realization.</i>
-											BhagavadGita.io allows a reader to read, 
-											study and recite this magnificent text on any device in a simple, beautiful and 
+											BhagavadGita.io allows a reader to read,
+											study and recite this magnificent text on any device in a simple, beautiful and
 											easy to use interface.
 										</strong>
 									</p>
@@ -416,11 +416,11 @@
 	<u>Features</u>
 </strong>
 <br>
-										• Flask + Postgres Backend &nbsp; 
+										• Flask + Postgres Backend &nbsp;
 										• OAuth2 Authentication &nbsp;
-										<br> 
-										• OpenAPI Specification &nbsp; 
-										• Swagger Docs &nbsp; 
+										<br>
+										• OpenAPI Specification &nbsp;
+										• Swagger Docs &nbsp;
 									</p>
 									<a class="button sam-Button" href="https://restapi.samanyougarg.com">
 										<span class="icon is-small">
@@ -443,10 +443,10 @@
 	<u>Features</u>
 </strong>
 <br>
-										• Ranked on Google Page 1 for the top keywords on this topic. &nbsp; 
+										• Ranked on Google Page 1 for the top keywords on this topic. &nbsp;
 										<br>
 										• Progressive Web App. &nbsp;
-										• AMP enabled for instant page loading. &nbsp; 
+										• AMP enabled for instant page loading. &nbsp;
 									</p>
 									<a class="button sam-Button" href="https://hanumanchalisa.net">
 										<span class="icon is-small">
@@ -544,7 +544,7 @@
 										</div>
 										<div class="timeline-content">
 											<p class="heading">July 2017 - Present</p>
-											<p>Application Developer - Vertex Pharmaceuticals</p>
+											<a id="display-modal-1">Application Developer - Vertex Pharmaceuticals</a>
 										</div>
 									</div>
 									<div class="timeline-item is-danger">
@@ -636,22 +636,128 @@
 		  </div>
 		</footer>
 
+		<div id="modal-1" class="modal">
+		  <div class="modal-background"></div>
+		  <div class="modal-card">
+		    <header class="modal-card-head">
+		      <p class="modal-card-title">Experience at Vertex</p>
+		    </header>
+		    <section class="modal-card-body">
+		      <div class="content">
+						<h3><u>1.  Blood Donation Application</u></h2>
+						<h4>Problem and Requirements -</h3>
+						<ol>
+						<li>Increasing demand for blood samples to support Drug Research.</li>
+						<li>Blood samples from donors outside company costed £1000+ per sample due to costs like advertising, transport etc.</li>
+						<li>Asking company employees to donate blood costed much less (£50 per donor including transport, health center fees etc.).</li>
+						<li>Needed a flexible and efficient system to manage the blood donation process and track blood samples.</li>
+						</ol>
+						<h4>Solution -</h4>
+						<ol>
+						<li>Developed a lightweight web application. Backend – Flask, Database – MySQL, Frontend – Bootstrap.</li>
+						<li>Application features -
+						<ol>
+						<li>Automatically selected potential donors based on business rules.    </li>
+						<li>Emailed respective people(donors, admins, health center staff etc.) with information and calendar invites.</li>
+						<li>Generated barcode labels for tubes.</li>
+						<li>Request and donor reports.</li>
+						<li>Request tracking using statuses and donor tracking using statuses/barcodes.</li>
+						<li>Donor Approval Mechanism.</li></ol>
+						</li>
+						</ol>
+						<h3><u>2.  Accident and Incident Reporting Application</u></h3>
+						<h4>Problem and Requirements -</h4>
+						<ol>
+						<li>EHS(Environment, Health &amp; Safety) department needed an application to allow employees to report Near Misses which could turn into dangerous situations.</li>
+						<li>Had to be quick and easy to use. </li>
+						<li>As accessible as possible.</li>
+						</ol>
+						<h4>Solution -</h4>
+						<ol>
+						<li>Developed a Progressive Web Application + Android app. Backend – Flask, Database – MySQL, Frontend – Material Design.</li>
+						<li>Application features -
+						<ol>
+						<li>Progressive Web App -
+						<ol>
+						<li>Works on any device, taking advantage of any features available on the user’s device and browser.</li>
+						<li>Instant loading.</li>
+						<li>Responsive.</li>
+						<li>Feels like a mobile app with app-style interactions.</li>
+						<li>Served via HTTPS to ensure content is securely delivered.</li>
+						<li>Allows users to install the website as an app on their home screen.</li></ol>
+						</li>
+						<li>Allows users to take pictures directly from their phones/tablets.</li></ol>
+						</li>
+						<li>Android app uses a WebView to create a wrapper around the web application along with Android's Native elements, allowing a user to access their device's hardware to take pictures for example. Also, helps make the app maintainable as just the code for the web application needs to be updated when a change is needed.</li>
+						</ol>
+						<h3><u>3.  IoT application</u></h3>
+						<h4>Requirements -</h4>
+						<ol>
+						<li>Chemists needed an application that would allow them to remotely collect and visualize data from some of the instruments in the lab to monitor the progress/status of their experiments.</li>
+						</ol>
+						<h4>Solution -</h4>
+						<ol>
+						<li>Connected a Raspberry Pi 3 to each of the lab equipment that needed monitoring and put it on the network.</li>
+						<li>Created a web application that fired commands at the machine through the Raspberry Pi and grabbed data in return.</li>
+						<li>Chemists could set a schedule and an interval (for each data point) at the start of the experiment. The web application would fire commands at the instrument and grab data at the specified time intervals, till it reached the end of the schedule.</li>
+						<li>Real-time visualizations of multiple data points using High Charts.</li>
+						<li>Detailed custom reports for captured data.</li>
+						</ol>
+						<h3><u>4.  Controlled Chemical Administration application + API</u></h3>
+						<ol>
+						<li>Developed a Flask based web application to allow the registration and flagging of chemical compounds.</li>
+						<li>Customized reports generation in multiple formats.</li>
+						<li>Search by multiple criteria.</li>
+						<li>User friendly design.</li>
+						<li>REST API to allow the bulk registration, flagging and updating of chemical compounds.</li>
+						</ol>
+						<h3><u>5.  Sample REST API</u></h3>
+						<ol>
+						<li>Developed a sample end-to-end REST API in Python.</li>
+						<li>Set company standards for developing REST APIs that followed the Best Practices like versioning, validation, meaning HTTP responses, SSL etc.</li>
+						<li>OAuth2 authorization and authentication.</li>
+						<li>OpenAPI Specification</li>
+						<li>Swagger Documentation</li>
+						</ol>
+						<h3><u>6.  COSHH (Control Of Substances Hazardous to Health) application</u></h3>
+						<ol>
+						<li>Developed a web application to automate the workflow of filling paper Risk Assessment forms by chemists when starting a new experiment.</li>
+						<li>Well-designed UI to accommodate lots of dynamic form fields inside a page.</li>
+						<li>PDF generation.</li>
+						<li>Experiment Approval Mechanism.</li>
+						<li>Form review and sign-off process.</li>
+						<li>Batch form sign-off feature to review and sign multiple forms at once.</li>
+						</ol>
+						<h3><u>7.  Genomics Data Platform</u></h3>
+						<ol>
+						<li>Created a custom version of an open-source genetic and genomics data platform using Flask and Elasticsearch as the backend and AngularJS as the frontend.</li>
+						<li>Downloaded, cleaned and integrated big data from multiple sources for target identification and prioritization. </li>
+						<li>Created data analysis and visualizations using tools like pandas, json, D3, numpy etc.</li>
+						</ol>
+		      </div>
+		    </section>
+		    <footer class="modal-card-foot">
+		      <button class="button is-success" id="close-modal-1">Close</button>
+		    </footer>
+		  </div>
+		</div>
 	</main>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 <script>
 	$(document).ready(function () {
-		//Preloader
-		$(window).on("load", function () {
-			preloaderFadeOutTime = 500;
+		setTimeout(function () {
+			$('#preloader').remove()
+		}, 450);
+	});
 
-			function hidePreloader() {
-				var preloader = $('.spinner-wrapper');
-				preloader.fadeOut(preloaderFadeOutTime);
-			}
-			hidePreloader();
-		});
+	$("#display-modal-1").click(function() {
+	  $("#modal-1").addClass("is-active");
+	});
+
+	$("#close-modal-1").click(function() {
+	  $("#modal-1").removeClass("is-active");
 	});
 </script>
 
