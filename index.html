@@ -2,789 +2,800 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="author" content="Samanyou Garg">
-<meta name=description content="I am a final year Computer Science student at the University of Manchester. I am really passionate about Artificial Intelligence, Data Science and Machine Learning and have an in-depth knowledge of Python, SQL, Java, HTML5, CSS.">
-	<link href="https://plus.google.com/b/108952947437010576278/+SamanyouGarg" rel="publisher" />
-	<meta name=keywords content="samanyou garg, cv, resume, samanyou, garg, radha, krishna, hanuman, computer science, software engineer, sita">
-	<title>Samanyou Garg</title>
-	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
-	<link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
-	<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-	<link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
-	<meta name="application-name" content="&nbsp;" />
-	<meta name="msapplication-TileColor" content="#FFFFFF" />
-	<meta name="msapplication-TileImage" content="mstile-144x144.png" />
-	<meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
-	<meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
-	<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
-	<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Samanyou Garg">
+  <meta name="description" content="I am a final year Computer Science student at the University of Manchester. I am really passionate about Artificial Intelligence, Data Science and Machine Learning and have an in-depth knowledge of Python, SQL, Java, HTML5, CSS.">
+  <link href="https://plus.google.com/b/108952947437010576278/+SamanyouGarg" rel="publisher" />
+  <meta name="keywords" content="samanyou garg, cv, resume, samanyou, garg, radha, krishna, hanuman, computer science, software engineer, sita">
+  <title>Samanyou Garg</title>
 
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css" rel="stylesheet" type="text/css" media="screen"/>
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700" rel="stylesheet">
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" media="screen" href="css/extension.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-
-	<script>
-
-	document.addEventListener('DOMContentLoaded', function () {
-
-	  var hasClass = function(el, className) {
-			if (el.classList) {
-				return el.classList.contains(className);
-			} else {
-				return new RegExp("\\b" + className + "\\b").test(el.className);
-	    }
-		}
-	  var addClass = function(el, className) {
-			if (el.classList) {
-				return el.classList.add(className);
-			} else if (!hasClass(el, className)) {
-				return (el.className += " " + className);
-			}
-		};
-		var removeClass = function(el, className) {
-			if (el.classList) {
-				return el.classList.remove(className);
-			} else {
-				return (el.className = el.className.replace(
-					new RegExp("\\b" + className + "\\b", "g"),
-					""
-				));
-			}
-		};
-	  var hide = function(el) {
-	  	el.style.display = "none";
-		};
-	  var show = function(el) {
-			el.style.display = "block";
-		};
-	  var click = function(el, handler) {
-			if (!el.eventListener) {
-				el.eventListener = true;
-				return el.addEventListener("click", handler);
-			}
-		};
-	  var toggleTab = function(el) {
-	  	let links = el.target.parentNode.parentNode;
-	  	let linksEl = links.querySelectorAll("li");
-	  	for (let i = 0; i < linksEl.length; i++) {
-	  		let l = linksEl[i];
-	  		removeClass(l, "is-active");
-	  		hide(document.querySelector(l.firstChild.getAttribute("data-tab")));
-	  	}
-	  	addClass(el.target.parentNode, "is-active");
-	  	show(document.querySelector(el.target.getAttribute("data-tab")));
-	  };
-	  var toggleTabMenu = function(el) {
-	  	let links = el.target.parentNode.parentNode;
-	  	let linksEl = links.querySelectorAll("a");
-	  	for (let i = 0; i < linksEl.length; i++) {
-	  		let l = linksEl[i];
-	  		removeClass(l, "is-active");
-	  		hide(document.querySelector(l.getAttribute("data-tab")));
-	  	}
-	  	addClass(el.target, "is-active");
-	  	show(document.querySelector(el.target.getAttribute("data-tab")));
-	  };
-
-
-	  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-	  if ($navbarBurgers.length > 0) {
-	    $navbarBurgers.forEach(function ($el) {
-	      $el.addEventListener('click', function () {
-	        var target = $el.dataset.target;
-	        var $target = document.getElementById(target);
-	        $el.classList.toggle('is-active');
-	        $target.classList.toggle('is-active');
-
-	      });
-	    });
-	  }
-
-
-	  var $tabs = Array.prototype.slice.call(document.querySelectorAll('.tabs'), 0);
-	  if ($tabs && $tabs.length > 0) {
-	    $tabs.forEach(function ($el) {
-	      targets = $el.querySelectorAll('[data-tab]');
-	      // console.log('targets', targets);
-	      for (j = 0, len1 = targets.length; j < len1; j++) {
-	        target = targets[j];
-	        tab = document.querySelector(target.getAttribute('data-tab'));
-	        // console.log('tab', tab)
-	        if (hasClass(target.parentNode, 'is-active') === false) {
-	          hide(tab);
-	        }
-	        click(target, toggleTab);
-	      }
-	    });
-	  }
-
-	  // these are side menus that act like tabs
-	  var $tabMenus = Array.prototype.slice.call(document.querySelectorAll('.tab-menu'), 0);
-	  if ($tabMenus && $tabMenus.length > 0) {
-	    $tabMenus.forEach(function ($el) {
-	      targets = $el.querySelectorAll('[data-tab]');
-	      // console.log('targets', targets);
-	      for (j = 0, len1 = targets.length; j < len1; j++) {
-	        target = targets[j];
-	        tabs = document.querySelector(target.getAttribute('data-tab'));
-	        if (tabs.length) { // selector is a class, it has many
-	          tabs.forEach(function (tab) {
-	            if (hasClass(target.parentNode, 'is-active') === false) {
-	              hide(tab);
-	            }
-	          })
-	        } else { // selector is an ID, it has one
-	          if (hasClass(target.parentNode, 'is-active') === false) {
-	            hide(tab);
-	          }
-	        }
-
-	        click(target, toggleTabMenu);
-	      }
-	    });
-	  }
-
-	});
-
-	</script>
-
+  <!-- Favicon -->
+  <link href="favicon.ico" rel="icon" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <!-- Argon CSS -->
+  <link type="text/css" href="assets/css/argon.min.css" rel="stylesheet">
 </head>
 
-<body data-gr-c-s-loaded="true">
+<body>
+  <header class="header-global">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
+      <div class="container">
+        <a class="navbar-brand mr-lg-5" href="../index.html"><img src="assets/img/brand/white.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="../index.html">
+                  <img src="assets/img/brand/blue.png">
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+            <li class="nav-item">
+              <a href="https://bhagavadgita.io" target="_blank" class="nav-link" role="button">
+                <i class="fas fa-blog"></i>
+                <span class="nav-link-inner--text">Blog</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="https://twitter.com/samanyougarg/" target="_blank" data-toggle="tooltip" title="Follow me on Twitter">
+                <i class="fab fa-twitter"></i>
+                <span class="nav-link-inner--text d-lg-none">Twitter</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="https://github.com/samanyougarg/" target="_blank" data-toggle="tooltip" title="Check out my Github profile">
+                <i class="fab fa-github"></i>
+                <span class="nav-link-inner--text d-lg-none">Github</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="https://www.linkedin.com/in/samanyougarg/" target="_blank" data-toggle="tooltip"
+                title="Connect with me on LinkedIn">
+                <i class="fab fa-linkedin"></i>
+                <span class="nav-link-inner--text d-lg-none">LinkedIn</span>
+              </a>
+            </li>
+            <li class="nav-item d-none d-lg-block ml-lg-4">
+              <a href="/" target="_blank" class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon">
+                  <i class="fas fa-cloud-download-alt"></i>
+                </span>
+                <span class="nav-link-inner--text">Download CV</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="position-relative">
+      <!-- shape Hero -->
+      <section class="section section-lg section-image">
+        <div class="shape shape-style-1 shape-default">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="container py-lg-md d-flex">
+          <div class="col px-0">
+            <div class="row h-100">
+              <div class="col-lg-6 my-auto">
+                <h6 style="color: #11cdef;">Hi, my name is</h6>
+                <h1 class="display-2  text-white">Samanyou Garg.</h1>
+                <h2 style="font-size: 2rem; color: #e0dfdf;">I reinvent innovative products to make the world work better.</h2>
+                <p class="lead" style="color: #e0dfdf;">I am an experiential learner who dreams, designs and builds exceptional, high-quality web apps. I also train machines to
+                teach themselves.</p>
+                <div class="btn-wrapper">
+                  <a href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html" class="btn btn-info btn-icon mb-3 mb-sm-0">
+                    <span class="btn-inner--icon"><i class="fas fa-envelope"></i></span>
+                    <span class="btn-inner--text">Get in touch</span>
+                  </a>
+                  <a href="https://www.creative-tim.com/product/argon-design-system" class="btn btn-white btn-icon mb-3 mb-sm-0" style="color: #5e72e4;">
+                    <span class="btn-inner--icon"><i class="fas fa-cloud-download-alt"></i></span>
+                    <span class="btn-inner--text">Download CV</span>
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-6 my-auto d-none d-lg-block">
+                <img src="assets/img/krishna-8-b.svg" class="img-fluid" alt="Image description." />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SVG separator -->
+        <div class="separator separator-bottom separator-skew">
+          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+          </svg>
+        </div>
+      </section>
+      <!-- 1st Hero Variation -->
+    </div>
+    
+    <section class="section section-lg">
+      <div class="container">
+        <div class="row row-grid align-items-center">
+          <div class="col-md-6 order-md-2">
+            <img src="assets/img/samanyou-garg.jpg" class="rounded img-center img-fluid shadow shadow-lg--hover floating" style="width: 350px;">
+          </div>
+          <div class="col-md-6 order-md-1">
+            <div class="pr-md-5">
+              <div class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-3">
+                <i class="fas fa-user"></i>
+              </div>
+              <h3>About Me</h3>
+              <p class="text-justify">I'm an aspiring AI engineer with a background in software engineering, who likes turning raw data into actionable
+              insights. I develop exceptional web and mobile apps that provide simple, intuitive user interfaces with efficient and
+              modern backends. I am an unconventional thinker who comes up with innovative solutions to complex problems, allowing
+              projects to meet deadlines, budgets, and objectives.</p>
+              <p>Here are a few technologies I've been working with recently:</p>
+              <div class="row">
+                <div class="col-12 container">
+                  <ul class="list-unstyled row">
+                    <li class="list-item col-6 py-2">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="badge badge-circle badge-success mr-3">
+                            <i class="fab fa-python"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">Python</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-item col-6 py-2">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="badge badge-circle badge-success mr-3">
+                            <i class="fab fa-html5"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">HTML and CSS</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-item col-6 py-2">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="badge badge-circle badge-success mr-3">
+                            <i class="fab fa-js"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">JavaScript</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-item col-6 py-2">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="badge badge-circle badge-success mr-3">
+                            <i class="fas fa-database"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">SQL</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-item col-6 py-2">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="badge badge-circle badge-success mr-3">
+                            <i class="fab fa-java"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">Java</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-item col-6 py-2">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="badge badge-circle badge-success mr-3">
+                            <i class="fas fa-cloud"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">REST API</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-item col-6 py-2">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="badge badge-circle badge-success mr-3">
+                            <i class="fas fa-flask"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">Flask</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-item col-6 py-2">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="badge badge-circle badge-success mr-3">
+                            <i class="fab fa-android"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">Android Studio</h6>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="spinner-wrapper" id="preloader">
-	<div class="spinner"></div>
-</div>
+    <section class="section bg-secondary">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <div class="pr-md-5">
+              <div class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-3">
+                <i class="fas fa-id-card"></i>
+              </div>
+              <h3>Where I've Worked</h3>
+              <div class="nav-wrapper">
+                <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1"
+                      role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i
+                        class="fas fa-university mr-2"></i>University of Manchester</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2"
+                      role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="fas fa-capsules mr-2"></i>Vertex Pharmaceuticals</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab" data-toggle="tab" href="#tabs-icons-text-3"
+                      role="tab" aria-controls="tabs-icons-text-3" aria-selected="false"><i
+                        class="fas fa-italic mr-2"></i>CRIS India</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card shadow">
+                <div class="card-body">
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel"
+                      aria-labelledby="tabs-icons-text-1-tab">
+                      <h5 class="text-left">
+                        Hornet Representative @ <a href="https://www.manchester.ac.uk/" target="_blank" rel="nofollow noopener noreferrer">University of Manchester</a>
+                      </h5>
+                      <p class="text-left description">Sept 2018 - June 2019</p>
+                      <p class="text-left">Worked on the first line support/resolution of all wired and wireless issues reported in Manchester University Halls of
+                      residence.</p>
+                    </div>
+                    <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
+                      <h5 class="text-left">
+                        Application Developer @ <a href="https://www.vrtx.com/" target="_blank"
+                          rel="nofollow noopener noreferrer">Vertex Pharmaceuticals</a>
+                      </h5>
+                      <p class="text-left description">July 2017 - June 2018</p>
+                      <ul>
+                        <li class="work-description text-left">
+                          Worked on a genetics and genomics data platform. Downloaded, cleaned and integrated big data from various sources, extracted useful insights from it and presented it to users in the form of visualisations.
+                        </li>
+                        <li class="work-description text-left">
+                          Integrated lab equipment directly to the network using raspberry pi and built an IoT application allowing scientists to extract data from the equipment as well as analyse and visualise that data in real-time.
+                        </li>
+                        <li class="work-description text-left">
+                          Redesigned a legacy application from the ground up and added new functionality to streamline an internal process with a massive amount of positive feedback from the stakeholders and the end users.
+                        </li>
+                        <li class="work-description text-left">
+                          Developed a Progressive Web App, making it quick and easy for any employee to report incidents and accidents, thus overcoming the challenges of accessibility and increasing the report numbers by 3 times.
+                        </li>
+                        <li class="work-description text-left">
+                           Created and established REST API design standards and best practices for application developers to create an API layer on their web projects.
+                        </li>
+                        <li class="work-description text-left">
+                          Engineered an application to automate the workflow of filling paper-based Risk Assessment forms by chemists, thus increasing the efficiency of the workflow by 400%.
+                        </li>
+                        <li class="work-description text-left">
+                          Liaised with research scientists to uncover their needs, convinced them to embrace computing and translated their requirements into innovative software-based solutions resulting in increased productivity
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
+                      <h5 class="text-left">
+                        Developer @ <a>CRIS</a>
+                      </h5>
+                      <p class="text-left description">June 2018 - Sept 2019</p>
+                      <ul>
+                        <li class="work-description text-left">
+                          Upgraded a Spring-based java-driven web application for better planning, coordination and faster execution of work between two Government departments.
+                        </li>
+                        <li class="work-description text-left">
+                          Identified and analyzed customer’s requirements, processed flow charts involving customers at each stage and completed the project as per timeline, incorporating all milestones with full customer satisfaction.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<main>
-		<nav class="MainMenu navbar is-transparent">
-		  <div class="navbar-brand">
-		    <a class="navbar-item" href="/">
-		      <img src="images/samanyougarg.svg" alt="Samanyou Garg">
-		    </a>
-		    <div class="navbar-burger burger" data-target="main-menu">
-		      <span></span>
-		      <span></span>
-		      <span></span>
-		    </div>
-		  </div>
+    <section class="section section-lg">
+      <div class="container text-center">
+        <div class="pr-md-5">
+          <div class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-3">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="mb-5">Featured Projects</h3>
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <div class="row row-grid">
+                <div class="col-lg-4">
+                  <div class="card card-lift--hover shadow border-0 h-100">
+                    <img src="assets/img/ger.png" class="card-img-top">
+                    <div class="card-body">
+                      <h6 class="text-primary text-uppercase">Group Emotion Recognition</h6>
+                      <p class="mt-3 text-justify">AI app to recognize the emotions of groups of people in various social environments. Based on a novel combination of deep neural networks and Bayesian classifiers.</p>
+                      <div>
+                        <span class="badge badge-pill badge-primary">Tensorflow</span>
+                        <span class="badge badge-pill badge-primary">Flask (Python)</span>
+                        <span class="badge badge-pill badge-primary">Android</span>
+                        <span class="badge badge-pill badge-primary">Vision API</span>
+                        <span class="badge badge-pill badge-primary">OpenCV</span>
+                        <span class="badge badge-pill badge-primary">Numpy</span>
+                        <span class="badge badge-pill badge-primary">Scikit Learn</span>
+                      </div>
+                      <a href="https://ger.hackeryogi.com/" class="btn btn-primary mt-4" target="_blank" rel="nofollow noopener noreferrer" aria-label="Web App Link" style="padding: 0.1rem 0.8rem;"><i class="fas fa-link"></i></i></a>
+                      <a href="https://github.com/samanyougarg/Group-Emotion-Recognition" class="btn btn-primary mt-4" target="_blank" rel="nofollow noopener noreferrer" aria-label="Github Link" style="padding: 0.1rem 0.8rem;"><i class="fab fa-github"></i></a>
+                      <a href="https://hackeryogi.com/BhagavadGita" class="btn btn-primary mt-4" target="_blank"
+                        rel="nofollow noopener noreferrer" aria-label="Blog Link" style="padding: 0.1rem 0.8rem;"><i
+                          class="fas fa-blog"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card card-lift--hover shadow border-0 h-100">
+                    <img src="assets/img/bhagavadgita.png" class="card-img-top">
+                    <div class="card-body">
+                      <h6 class="text-warning text-uppercase">BHAGAVADGITA.IO</h6>
+                      <p class="mt-3 text-justify">BhagavadGita.io is a modern <a target="_blank" href="https://en.wikipedia.org/wiki/Bhagavad_Gita">Bhagavad Gita</a> app with a
+                      simple, beautiful and easy to use interface, helping users focus on reading. It perfectly combines an intuitive,
+                      user-friendly design with best-in-class features to greatly enhance the experience of its users.</p>
+                      <div>
+                        <span class="badge badge-pill badge-warning">Flask (Python)</span>
+                        <span class="badge badge-pill badge-warning">PostgreSQL</span>
+                        <span class="badge badge-pill badge-warning">PWA</span>
+                        <span class="badge badge-pill badge-warning">Android (Java)</span>
+                        <span class="badge badge-pill badge-warning">OAuth2</span>
+                        <span class="badge badge-pill badge-warning">REST API</span>
+                      </div>
+                      <a href="https://bhagavadgita.io/app/" class="btn btn-warning mt-4" target="_blank"
+                        rel="nofollow noopener noreferrer" aria-label="Web App Link" style="padding: 0.1rem 0.8rem;"><i
+                          class="fas fa-link"></i></i></a>
+                      <a href="https://github.com/gita/BhagavadGita" class="btn btn-warning mt-4" target="_blank"
+                        rel="nofollow noopener noreferrer" aria-label="Github Link" style="padding: 0.1rem 0.8rem;"><i
+                          class="fab fa-github"></i></a>
+                      <a href="https://hackeryogi.com/BhagavadGita" class="btn btn-warning mt-4" target="_blank"
+                        rel="nofollow noopener noreferrer" aria-label="Blog Link" style="padding: 0.1rem 0.8rem;"><i
+                        class="fas fa-blog"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card card-lift--hover shadow border-0 h-100">
+                    <img src="assets/img/tldr.png" class="card-img-top">
+                    <div class="card-body">
+                      <h6 class="text-purple text-uppercase">TLDR This</h6>
+                      <p class="mt-3 text-justify">TLDR This is a web app (+ chrome extension) that can take a painfully long piece of text and sum it up into five key
+                      bullet points using the power of NLP. Spend less time reading counterproductive stuff and more on doing valuable work.</p>
+                      <div>
+                        <span class="badge badge-pill badge-purple">Flask (Python)</span>
+                        <span class="badge badge-pill badge-purple">HTML / CSS / JS</span>
+                      </div>
+                      <a href="https://tldr.hackeryogi.com/" class="btn btn-purple mt-4" target="_blank" rel="nofollow noopener noreferrer"
+                        aria-label="Web App Link" style="padding: 0.1rem 0.8rem;"><i class="fas fa-link"></i></i></a>
+                      <a href="https://github.com/samanyougarg/Group-Emotion-Recognition" class="btn btn-purple mt-4" target="_blank"
+                        rel="nofollow noopener noreferrer" aria-label="Github Link" style="padding: 0.1rem 0.8rem;"><i
+                          class="fab fa-github"></i></a>
+                      <a href="https://hackeryogi.com/BhagavadGita" class="btn btn-purple mt-4" target="_blank"
+                        rel="nofollow noopener noreferrer" aria-label="Blog Link" style="padding: 0.1rem 0.8rem;"><i
+                          class="fas fa-blog"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		  <div class="navbar-menu" id="main-menu">
-		    <div class="navbar-start">
-		    </div>
+    <section class="section section-lg bg-secondary">
+      <div class="container text-center">
+        <div class="pr-md-5">
+          <div class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-3">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="mb-5">Other Projects</h3>
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-12">
+              <div class="row row-grid">
+                <div class="col-lg-4">
+                  <div class="card card-lift--hover shadow border-0 h-100">
+                    <div class="card-body">
+                      <div class="row mb-3">
+                        <div class="col text-left">
+                          <div class="icon icon-shape icon-shape-primary rounded-circle">
+                            <i class="fas fa-shapes"></i>
+                          </div>
+                        </div>
+                        <div class="col text-right mb2" style="margin-top: -0.5rem">
+                          <a href="https://samanyougarg.com/hanuman" class="btn btn-primary mt-4" target="_blank" rel="nofollow noopener noreferrer"
+                            aria-label="Web App Link" style="padding: 0.1rem 0.8rem;"><i class="fas fa-link"></i></i></a>
+                          <a href="https://github.com/samanyougarg/hanuman" class="btn btn-primary mt-4" target="_blank"
+                            rel="nofollow noopener noreferrer" aria-label="Github Link" style="padding: 0.1rem 0.8rem;"><i
+                              class="fab fa-github"></i></a>
+                        </div>
+                      </div>
+                      <h6 class="text-primary text-uppercase">HANUMAN Jekyll Theme</h6>
+                      <p class="mt-3 text-justify">A responsive, lightning-fast Jekyll theme built using AMP (Accelerated Mobile Pages) to speed up your blogs and websites.</p>
+                      <div>
+                        <span class="badge badge-pill badge-primary">HTML</span>
+                        <span class="badge badge-pill badge-primary">CSS</span>
+                        <span class="badge badge-pill badge-primary">Ruby</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card card-lift--hover shadow border-0 h-100">
+                    <div class="card-body">
+                      <div class="row mb-3">
+                        <div class="col text-left">
+                          <div class="icon icon-shape icon-shape-primary rounded-circle">
+                            <i class="fas fa-shapes"></i>
+                          </div>
+                        </div>
+                        <div class="col text-right mb2" style="margin-top: -0.5rem">
+                          <a href="https://restapi.samanyougarg.com/" class="btn btn-primary mt-4" target="_blank"
+                            rel="nofollow noopener noreferrer" aria-label="Web App Link" style="padding: 0.1rem 0.8rem;"><i
+                              class="fas fa-link"></i></i></a>
+                          <a href="https://github.com/samanyougarg/rest-api-example" class="btn btn-primary mt-4" target="_blank"
+                            rel="nofollow noopener noreferrer" aria-label="Github Link" style="padding: 0.1rem 0.8rem;"><i
+                              class="fab fa-github"></i></a>
+                        </div>
+                      </div>
+                      <h6 class="text-primary text-uppercase">FLASK EXAMPLE REST API</h6>
+                      <p class="mt-3 text-justify">An example API that follows some of the Best Practices for designing a REST API.</p>
+                      <div>
+                        <span class="badge badge-pill badge-primary">Flask</span>
+                        <span class="badge badge-pill badge-primary">OAuth2</span>
+                        <span class="badge badge-pill badge-primary">OpenAPI</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card card-lift--hover shadow border-0 h-100">
+                    <div class="card-body">
+                      <div class="row mb-3">
+                        <div class="col text-left">
+                          <div class="icon icon-shape icon-shape-primary rounded-circle">
+                            <i class="fas fa-shapes"></i>
+                          </div>
+                        </div>
+                        <div class="col text-right mb2" style="margin-top: -0.5rem">
+                          <a href="https://stendhalgame.org/" class="btn btn-primary mt-4" target="_blank"
+                            rel="nofollow noopener noreferrer" aria-label="Web App Link" style="padding: 0.1rem 0.8rem;"><i
+                              class="fas fa-link"></i></i></a>
+                        </div>
+                      </div>
+                      <h6 class="text-primary text-uppercase">STENDHAL GAME</h6>
+                      <p class="mt-3 text-justify">Tested, debugged, built, developed and deployed a multi-user, multi-threaded, client-server open source game containing
+                      over 6000 Java classes and 1800 test cases.</p>
+                      <div>
+                        <span class="badge badge-pill badge-primary">Java</span>
+                        <span class="badge badge-pill badge-primary">Eclipse</span>
+                        <span class="badge badge-pill badge-primary">Apache Ant</span>
+                        <span class="badge badge-pill badge-primary">Jenkins</span>
+                        <span class="badge badge-pill badge-primary">Junit</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="row justify-content-center" id="other-projects-1">
+            <div class="col-lg-12">
+              <div class="row row-grid">
+                <div class="col-lg-4">
+                  <div class="card card-lift--hover shadow border-0 h-100">
+                    <div class="card-body">
+                      <div class="row mb-3">
+                        <div class="col text-left">
+                          <div class="icon icon-shape icon-shape-primary rounded-circle">
+                            <i class="fas fa-shapes"></i>
+                          </div>
+                        </div>
+                        <div class="col text-right mb2" style="margin-top: -0.5rem">
+                          <a href="https://github.com/samanyougarg/dl-fashion-mnist" class="btn btn-primary mt-4" target="_blank"
+                            rel="nofollow noopener noreferrer" aria-label="Github Link" style="padding: 0.1rem 0.8rem;"><i
+                              class="fab fa-github"></i></a>
+                        </div>
+                      </div>
+                      <h6 class="text-primary text-uppercase">Cloth Classification</h6>
+                      <p class="mt-3 text-justify">A Tensorflow model for classifying clothes using the Fashion MNIST dataset.</p>
+                      <div>
+                        <span class="badge badge-pill badge-primary">Tensorflow</span>
+                        <span class="badge badge-pill badge-primary">Jupyter Notebook</span>
+                        <span class="badge badge-pill badge-primary">Pandas</span>
+                        <span class="badge badge-pill badge-primary">Scikit Learn</span>
+                        <span class="badge badge-pill badge-primary">Numpy</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="col-lg-4">
+                  <div class="card card-lift--hover shadow border-0 h-100">
+                    <div class="card-body">
+                      <div class="row mb-3">
+                        <div class="col text-left">
+                          <div class="icon icon-shape icon-shape-primary rounded-circle">
+                            <i class="fas fa-shapes"></i>
+                          </div>
+                        </div>
+                        <div class="col text-right mb2" style="margin-top: -0.5rem">
+                          <a href="https://restapi.samanyougarg.com/" class="btn btn-primary mt-4" target="_blank"
+                            rel="nofollow noopener noreferrer" aria-label="Web App Link" style="padding: 0.1rem 0.8rem;"><i
+                              class="fas fa-link"></i></i></a>
+                          <a href="https://github.com/samanyougarg/rest-api-example" class="btn btn-primary mt-4" target="_blank"
+                            rel="nofollow noopener noreferrer" aria-label="Github Link" style="padding: 0.1rem 0.8rem;"><i
+                              class="fab fa-github"></i></a>
+                        </div>
+                      </div>
+                      <h6 class="text-primary text-uppercase">FLASK EXAMPLE REST API</h6>
+                      <p class="mt-3 text-justify">An example API that follows some of the Best Practices for designing a REST API.</p>
+                      <div>
+                        <span class="badge badge-pill badge-primary">Flask</span>
+                        <span class="badge badge-pill badge-primary">OAuth2</span>
+                        <span class="badge badge-pill badge-primary">OpenAPI</span>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- <div class="col-lg-4">
+                  <div class="card card-lift--hover shadow border-0 h-100">
+                    <div class="card-body">
+                      <div class="row mb-3">
+                        <div class="col text-left">
+                          <div class="icon icon-shape icon-shape-primary rounded-circle">
+                            <i class="fas fa-shapes"></i>
+                          </div>
+                        </div>
+                        <div class="col text-right mb2" style="margin-top: -0.5rem">
+                          <a href="https://stendhalgame.org/" class="btn btn-primary mt-4" target="_blank"
+                            rel="nofollow noopener noreferrer" aria-label="Web App Link" style="padding: 0.1rem 0.8rem;"><i
+                              class="fas fa-link"></i></i></a>
+                        </div>
+                      </div>
+                      <h6 class="text-primary text-uppercase">STENDHAL GAME</h6>
+                      <p class="mt-3 text-justify">Tested, debugged, built, developed and deployed a multi-user, multi-threaded, client-server open source game containing
+                      over 6000 Java classes and 1800 test cases.</p>
+                      <div>
+                        <span class="badge badge-pill badge-primary">Java</span>
+                        <span class="badge badge-pill badge-primary">Eclipse</span>
+                        <span class="badge badge-pill badge-primary">Apache Ant</span>
+                        <span class="badge badge-pill badge-primary">Jenkins</span>
+                        <span class="badge badge-pill badge-primary">Junit</span>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <br>
+          <div id="load">
+            <button class="btn btn-success btn-icon mb-3 mb-sm-0" id="loadmore">
+              <span class="btn-inner--icon"><i class="fas fa-plus-square"></i></span>
+              <span class="btn-inner--text">Load More</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		    <div class="navbar-end">
-		      <div class="navbar-item">
-		        <div class="field is-grouped">
-		          <p class="control">
-		            <a class="button sam-Button" href="Samanyou_Garg_CV.pdf">
-		              <span>Download CV</span>
-								</a>
-								<a class="button sam-Button" href="https://github.com/samanyougarg">
-									<span class="icon is-small">
-										<i class="fa fa-github"></i>
-									</span>
-								</a>
-								<a class="button sam-Button" href="https://www.linkedin.com/in/samanyougarg/">
-									<span class="icon is-small">
-										<i class="fa fa-linkedin"></i>
-									</span>
-								</a>
-		          </p>
-		        </div>
-		      </div>
-		    </div>
-		  </div>
-		</nav>
+    <section class="section section-lg section-image">
+      <div class="container pb-250">
+        <div class="row text-center justify-content-center">
+          <div class="col-lg-10">
+            <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary mb-3">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h2 class="display-3 text-white">Get In Touch!</h2>
+            <p class="lead text-white">Although I'm not currently looking for full-time opportunities, my inbox is always open. Whether it's for a prospective
+            project or just to say hi, I'll try my best to answer your email.</p>
+          </div>
+        </div>
+      </div>
+      <!-- SVG separator -->
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </section>
+    <section class="section section-lg pt-lg-0 section-contact-us">
+      <div class="container">
+        <div class="row justify-content-center mt--300">
+          <div class="col-lg-8">
+            <div class="card bg-gradient-secondary shadow">
+              <div class="card-body p-lg-5">
+                <h4 class="mb-1">Contact Me</h4>
+                <form method="post" action="https://formspree.io/me@samanyougarg.com">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Full Name *" type="text" name="name" id="name" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-question"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Subject *" name="subject" id="subject" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    </div>
+                    <input class="form-control required email" placeholder="Email *" type="email" value="" name="email" id="email" required>
+                  </div>
+                </div>
+                <div class="form-group mb-4">
+                  <textarea class="form-control form-control-alternative" placeholder="Message *" name="message" id="message" rows="4" cols="80" required></textarea>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-success btn-round btn-block btn-lg" type="submit" value="Submit">Send Message</button>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="row row-grid align-items-center my-md">
+        <div class="col-lg-6">
+          <h4 class="mb-0 font-weight-light">Let's connect on any of these platforms.</h4>
+        </div>
+        <div class="col-lg-6 text-lg-center btn-wrapper">
+          <a target="_blank" href="https://twitter.com/samanyougarg" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" data-toggle="tooltip" data-original-title="Follow me">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a target="_blank" href="https://www.linkedin.com/in/samanyougarg/" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip" data-original-title="Connect with me">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a target="_blank" href="https://github.com/samanyougarg" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip" data-original-title="Star on Github">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+      <hr>
+      <div class="row align-items-center justify-content-md-between">
+        <div class="col-md-6">
+          <div class="copyright">
+            &copy; 2019 <a href="https://bhagavadgita.io">Radha Krishna</a>.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul class="nav nav-footer justify-content-end">
+            <li class="nav-item">
+              <a href="https://bhagavadgita.io" class="nav-link" target="_blank">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-		<div class="MainHero">
-		  <div id="angles" class="">
-		    <div class="animals"></div>
-		    <span></span>
-		    <span></span>
-		    <span></span>
-		    <span></span>
-		    <span></span>
-		  </div>
-		  <section class="hero is-medium">
-		    <div class="hero-body">
-		      <div class="container">
-		  			<div class="columns">
-		  				<div class="column is-6">
-		    	      <h2 class="title">
-									<span>Hi there!</span>
-									<span>I am Samanyou Garg.</span>
-		    	      </h2>
-		    	      <p class="">
-									I am a final year computer science student at the University of Manchester, looking to secure a Graduate Software
-									Developer position to further develop my skills and knowledge in a practical and fast-paced environment. I am passionate about Artificial Intelligence, Data Science and Machine Learning and love dreaming, designing and reinventing innovate products to make the world work better.
-		    	      </p>
-		            <p>
-		              <br>
-									<a href="Samanyou_Garg_CV.pdf" class="button sam-Button">Download CV</a>
-									<a href="#contact" class="button sam-Button">Contact Me</a>
-		            </p>
-		  				</div>
+  <style>
+    .headroom--not-top {
+      background-color: #3F51B5!important;
+    }
 
-		  			</div>
-		      </div>
+    .section-image {
+      background: url('assets/img/bg-4.png');
+      background-size: cover;
+    }
 
-		    </div>
-		  </section>
-		</div>
+    .work-description {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
 
-		<div class="Mockups">
-		  <img src="images/device.png" alt="Code">
-		</div>
+    .text-purple {
+      color: #A62ABD !important;
+    }
 
-		<div class="Bundle hero">
+    .btn-purple, .btn-purple:hover {
+      color: white;
+      border-color: #A62ABD;
+      background-color: #A62ABD;
+    }
 
-		  <div class="hero-body">
+    .badge-purple {
+      color: #A62ABD;
+      background-color: #f1def5;
+    }
 
-		  <div class="container">
-				<div class="blurb">
-					<div class="columns has-text-centered is-centered">
-						<div class="column is-8">
-							<h3 class="title">Skills</h3>
-						</div>
-					</div>
-				</div>
+    #other-projects-1 {
+      display: none;
+    }
+  </style>
+  <!-- Core -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/headroom.min.js"></script>
+  <!-- Argon JS -->
+  <script src="assets/js/argon.min.js"></script>
 
-
-				<div class="has-horizontal-scroll has-text-centered">
-					<div class="scrolling-wrapper-flexbox">
-						<div class="feature-card ">
-							<figure class="image is-64x64">
-								<img src="images/code.svg" alt="Programming Languages">
-							</figure>
-							<h5>Programming Languages</h5>
-							<p>
-								Python, Java, HTML, CSS, Javascript, C, SQL, Matlab, Prolog.
-							</p>
-						</div>
-
-						<div class="feature-card ">
-							<figure class="image is-64x64">
-								<img src="images/tools.svg" alt="Tools">
-							</figure>
-							<h5>Tools</h5>
-							<p>
-								Bash, Jupyter, Microsoft Office, Latex, IntelliJ, Atom, Eclipse, Sublime Text, Docker, MySQL, Postgres, Redis, Apache, Nginx, Shell.
-							</p>
-						</div>
-
-
-						<div class="feature-card ">
-							<figure class="image is-64x64">
-								<img src="images/cloud.svg" alt="Cloud Platforms">
-							</figure>
-							<h5>Cloud Platforms</h5>
-							<p>
-								AWS, Google Cloud, Heroku, DigitalOcean.
-							</p>
-						</div>
-
-
-						<div class="feature-card ">
-							<figure class="image is-64x64">
-								<img src="images/os.svg" alt="Operating Systems">
-							</figure>
-							<h5>Operating Systems</h5>
-							<p>
-								Mac, Windows, Linux.
-							</p>
-						</div>
-
-						<div class="feature-card ">
-							<figure class="image is-64x64">
-								<img src="images/git.svg" alt="Version Control">
-							</figure>
-							<h5>Version Control</h5>
-							<p>
-								Git, Jira, Jenkins, Travis.
-							</p>
-						</div>
-						<div class="padder-card "></div>
-					</div>
-<p style="font-size: 0.8rem; color: #9E9E9E;">Scroll right
-	<i class="fa fa-arrow-right"></i>
-</p>
-				</div>
-		  </div>
-		</div>
-
-
-		<div class="Projects section">
-
-
-		    <div class="container">
-		      <div class="section-header columns has-text-centered is-centered is-hidden-tablet">
-		        <div class="column is-6">
-		          <h3 class="title">Projects</h3>
-		        </div>
-		      </div>
-
-		      <div class="columns">
-
-		        <div class="ProjectMenu column is-3 is-hidden-mobile">
-		          <aside class="menu tab-menu">
-		            <h3 class="title">Projects</h3>
-		            <ul class="menu-list">
-		              <li class="is-active"><a class="is-active" data-tab="#tab-bhagavadgita">BhagavadGita.io</a></li>
-									<li><a data-tab="#tab-rest-api">Flask Example REST API</a></li>
-									<li><a data-tab="#tab-stendhal">Stendhal Game</a></li>
-									<li><a data-tab="#tab-hanuman">HanumanChalisa.net</a></li>
-									<li><a data-tab="#tab-wallpapers">Wallmob Wallpapers</a></li>
-									<li><a data-tab="#tab-eventlite">Eventlite</a></li>
-		            </ul>
-		        </aside></div>
-		        <div class="column">
-
-		          <div class="ProjectTabs tabs is-hidden-tablet">
-		            <ul>
-		              <li class="is-active"><a data-tab="#tab-bhagavadgita">
-		                BhagavadGita.io
-		              </a></li>
-									<li><a data-tab="#tab-rest-api">Flask Example REST API</a></li>
-									<li><a data-tab="#tab-stendhal">Stendhal Game</a></li>
-		              <li><a data-tab="#tab-wallpapers">Wallmob Wallpapers</a></li>
-		              <li><a data-tab="#tab-hanuman">HanumanChalisa.net</a></li>
-									<li><a data-tab="#tab-eventlite">Eventlite</a></li>
-		            </ul>
-		          </div>
-
-		          <div class="tab-content has-text-centered">
-		            <div class="content" id="tab-bhagavadgita">
-									<p>
-										<strong>
-											<i>Bhagavad Gita is a 700-verse Hindu scripture in Sanskrit and is universally regarded as the single most influential philosophical text that provides an ultimate guide to self-realization.</i>
-											BhagavadGita.io is modern Gita app with a simple, beautiful and easy to use interface, helping users focus on reading. It perfectly combines an intuitive, user-friendly design with best-in-class features to greatly enhance the
-											experience of its users.
-										</strong>
-									</p>
-									<p>
-										<strong>
-											<u>Features</u>
-										</strong>
-										<br>
-											• Provides a REST API (World's First Bhagavad Gita API) | Follows Best Practices + OAuth2 + OpenAPI Spec &nbsp;
-											<br>
-											• Elasticsearch (for full-text search) &nbsp;
-																					• Flask + Postgres Backend &nbsp;
-																					<br>
-											• Progressive Web App (One of the earliest adapters of PWA) &nbsp;
-											• Android App &nbsp;
-																					• Material Design &nbsp;
-											• Translations in multiple languages &nbsp;
-											• Google/Facebook/Github login &nbsp;
-											• Progress Tracking using graphs and detailed statistics&nbsp;
-											• Customized Reading Plans &nbsp;
-											• Achievements System to reward its users. &nbsp;
-									</p>
-									<a class="button sam-Button" href="https://bhagavadgita.io/app/">
-										<span class="icon is-small">
-											<i class="fa fa-info-circle"></i>
-										</span>
-										<span>Visit Website</span>
-									</a>
-									<a class="button sam-Button" href="https://github.com/gita/BhagavadGita">
-										<span class="icon is-small">
-											<i class="fa fa-github"></i>
-										</span>
-										<span>Github</span>
-									</a>
-		              <img src="images/bhagavadgita.png" alt="Bhagavad Gita">
-		            </div>
-		            <div class="content" id="tab-rest-api" style="display: none;">
-									<p><strong>Example API in Flask that follows REST API Best Practices.</strong></p>
-									<p>
-									<strong>
-										<u>Features</u>
-									</strong>
-									<br>
-										• Flask + Postgres Backend &nbsp;
-										• OAuth2 Authentication &nbsp;
-										<br>
-										• OpenAPI Specification &nbsp;
-										• Swagger Docs &nbsp;
-									</p>
-									<a class="button sam-Button" href="https://restapi.samanyougarg.com">
-										<span class="icon is-small">
-											<i class="fa fa-info-circle"></i>
-										</span>
-										<span>Visit Website</span>
-									</a>
-									<a class="button sam-Button" href="https://github.com/samanyougarg/rest-api-example">
-										<span class="icon is-small">
-											<i class="fa fa-github"></i>
-										</span>
-										<span>Github</span>
-									</a>
-		              <img src="images/restapi.png" alt="Flask Example REST API">
-		            </div>
-		            <div class="content" id="tab-hanuman" style="display: none;">
-									<p><strong>Online portal for the devotees of Hindu God, Lord Hanuman to stay devoted to Him by reading, chanting and singing His prayers, mantras and bhajans.</strong></p>
-									<p>
-									<strong>
-										<u>Features</u>
-									</strong>
-									<br>
-										• Ranked on Google Page 1 for the top keywords on this topic. &nbsp;
-										<br>
-										• Progressive Web App. &nbsp;
-										• AMP enabled for instant page loading. &nbsp;
-									</p>
-									<a class="button sam-Button" href="https://hanumanchalisa.net">
-										<span class="icon is-small">
-											<i class="fa fa-info-circle"></i>
-										</span>
-										<span>Visit Website</span>
-									</a>
-		              <img src="images/hanumanchalisa.png" alt="HanumanChalisa">
-		            </div>
-		            <div class="content" id="tab-wallpapers" style="display: none;">
-		              <p><strong>Cloud based android wallpaper app providing users custom made, unique and innovative wallpapers of all variety on a single
-									platform.</strong></p>
-									<a class="button sam-Button" href="https://play.google.com/store/apps/details?id=com.appisode.wallmob">
-										<span class="icon is-small">
-											<i class="fa fa-info-circle"></i>
-										</span>
-										<span>Visit Website</span>
-									</a>
-		              <img src="images/wallmob.png" alt="Wallmob">
-		            </div>
-								<div class="content" id="tab-stendhal" style="display: none;">
-									<p>
-										• Tested, debugged, built, developed and deployed a multi-user, multi-threaded, client-server open source game containing
-										over 6000 Java classes and 1800 test cases using Eclipse, Git, Apache Ant, Jenkins, Junit and SonarQube.
-										<br>
-										• Worked on the automation of builds and tests leading a team of 6 people over 12 weeks.
-									</p>
-									<a class="button sam-Button" href="https://stendhalgame.org/">
-										<span class="icon is-small">
-											<i class="fa fa-info-circle"></i>
-										</span>
-										<span>See Project</span>
-									</a>
-									<img src="images/stendhal.png" alt="Stendhal">
-								</div>
-								<div class="content" id="tab-eventlite" style="display: none;">
-									<p><strong>EventLite - Event Management Made Simple.</strong></p>
-									<p>
-										<strong>
-											<u>Work Done</u>
-										</strong>
-										<br>
-										• Developed software from first principles to create a new web application using the Spring web framework as a team of 5
-										people over 10 weeks.
-										<br>
-										• Introduced to MVC system architecture with Spring.
-										<br>
-										• Started by creating User Interface Mockups for the initial requirements given.
-										<br>
-										• Designed for Testability. Constructed good automated tests from requirements, looking in particular at the importance
-										of working out how to ensure coverage, ensuring that functionality can be tested in isolation.
-										<br>
-										• Integrated Third-Party APIs like Twitter and Google Maps API to use their services in our application.
-										<br>
-										• Ensured that acceptance tests are met, and the user experience is good.
-										<br>
-										• Implemented a REST API to enable sharing of data between applications.
-									</p>
-									<a class="button sam-Button" href="https://eventlite.samanyougarg.com">
-										<span class="icon is-small">
-											<i class="fa fa-info-circle"></i>
-										</span>
-										<span>See Project</span>
-									</a>
-									<img src="images/eventlite.png" alt="Eventlite">
-								</div>
-		            <!-- <div class="content" id="tab-data" style="display: none;">
-		              <p>Pipe your data to multiple sources from the backend.</p>
-		              <img src="images/analytics.png" alt="Multitenant">
-		            </div>
-		            <div class="content" id="tab-multitenant" style="display: none;">
-		              <p>All your sites under a single account. Starting a new blog takes just 20 seconds.</p>
-		              <img src="images/multitenant.png" alt="Multitenant">
-		            </div> -->
-		          </div>
-		        </div>
-
-		      </div>
-		    </div>
-		</div>
-
-	<div class="Education section">
-
-			<div class="container">
-
-				<div class="columns is-centered  has-text-centered">
-					<div class="column is-6">
-								<h3 class="title">Education</h3>
-								<div class="timeline is-centered">
-									<header class="timeline-header">
-										<span class="tag is-medium is-warning">Present</span>
-									</header>
-									<div class="timeline-item is-warning">
-										<div class="timeline-marker is-warning is-icon">
-											<i class="fa fa-university"></i>
-										</div>
-										<div class="timeline-content">
-											<p class="heading">Sept 2015 - Present</p>
-											<p>Bachelor’s Degree (Final Year in progress)</p>
-										</div>
-									</div>
-									<div class="timeline-item is-danger">
-										<div class="timeline-marker is-danger is-icon">
-											<i class="fa fa-book"></i>
-										</div>
-										<div class="timeline-content">
-											<p class="heading">April 2011 - Mar 2015</p>
-											<p>High School (Topped with 10 out of 10 CGPA)</p>
-										</div>
-									</div>
-									<div class="timeline-item is-success">
-										<div class="timeline-marker is-success is-icon">
-											<i class="fa fa-flag"></i>
-										</div>
-										<div class="timeline-content">
-											<p class="heading">March 2008 - March 2011</p>
-											<p>Middle School (Topped with 95.3 % marks)</p>
-										</div>
-									</div>
-									<header class="timeline-header">
-										<span class="tag is-medium is-success">Start</span>
-									</header>
-								</div>
-					</div>
-
-					<div class="is-divider-vertical"></div>
-
-					<div class="column is-6">
-								<h3 class="title">Work Experience</h3>
-								<div class="timeline is-centered">
-									<header class="timeline-header">
-										<span class="tag is-medium is-warning">Present</span>
-									</header>
-									<div class="timeline-item is-warning">
-										<div class="timeline-marker is-warning is-icon">
-											<i class="fa fa-code"></i>
-										</div>
-										<div class="timeline-content">
-											<p class="heading">July 2017 - June 2018</p>
-											<a id="display-modal-1">Application Developer - Vertex Pharmaceuticals</a>
-										</div>
-									</div>
-									<div class="timeline-item is-danger">
-										<div class="timeline-marker is-danger is-icon">
-											<i class="fa fa-file-code-o"></i>
-										</div>
-										<div class="timeline-content">
-											<p class="heading">June 2016 - Sept 2016</p>
-											<p>Founder &amp; App Developer - Appisode Studios</p>
-										</div>
-									</div>
-									<div class="timeline-item is-link">
-										<div class="timeline-marker is-link is-icon">
-											<i class="fa fa-server"></i>
-										</div>
-										<div class="timeline-content">
-											<p class="heading">June 2016 - Sept 2016</p>
-											<p>Developer - CRIS</p>
-										</div>
-									</div>
-									<header class="timeline-header">
-										<span class="tag is-medium is-success">Start</span>
-									</header>
-								</div>
-							</div>
-
-				</div>
-			</div>
-		</div>
-
-
-
-		<div class="section has-text-centered" style="z-index:9;position:relative;margin-bottom:-50px;">
-			<h3 class="title">Contact</h3>
-		</div>
-
-
-		<div class="Contact section" id="contact">
-		    <div class="container">
-		      <div class="columns is-centered ">
-		        <div class="column is-4">
-							<form method="post" action="https://formspree.io/me@samanyougarg.com">
-		            <div class="field">
-		              <div class="control">
-		                <input class="input" placeholder="Full Name *" type="text" name="name" id="name" required>
-		              </div>
-		            </div>
-		            <div class="field">
-		              <div class="control">
-		                <input class="input" placeholder="Subject *" name="subject" id="subject" required>
-		              </div>
-		            </div>
-		            <div class="field">
-		              <div class="control">
-		                <input class="input required email" placeholder="Email *" type="email" value="" name="email" id="email" required>
-		              </div>
-								</div>
-								<div class="field">
-									<div class="control">
-										<textarea class="input" placeholder="Message *" name="message" id="message" required></textarea>
-									</div>
-								</div>
-		            <div class="field">
-		              <div class="control has-text-right">
-		                <button class="sam-Button button" type="submit" value="Submit">Send</button>
-		              </div>
-		            </div>
-		          </form>
-		        </div>
-		      </div>
-		    </div>
-		</div>
-
-		<footer class="MainFooter footer">
-		  <div class="container">
-		  <div class="has-text-centered">
-				<small>Copyright © 2018 Samanyou Garg | All rights reserved by Samanyou Garg</small>
-		  </div>
-
-		  </div>
-		</footer>
-
-		<div id="modal-1" class="modal">
-		  <div class="modal-background"></div>
-		  <div class="modal-card">
-		    <header class="modal-card-head">
-		      <p class="modal-card-title">Experience at Vertex</p>
-		    </header>
-		    <section class="modal-card-body">
-		      <div class="content">
-						<h3><u>1. Blood Donation Application</u></h2>
-						<ol>
-						<li>Developed a lightweight web application. Backend – Flask, Database – MySQL, Frontend – Bootstrap, Javascript.</li>
-						<li>Application features -
-						<ol>
-						<li>Automatically selected potential donors based on business rules.</li>
-						<li>Emailed respective people(donors, admins, health center staff etc.) with information and calendar invites.</li>
-						<li>Generated barcode labels for tubes.</li>
-						<li>Detailed request and donor reports.</li>
-						<li>Request tracking using statuses and donor tracking using statuses/barcodes.</li>
-						<li>Donor Approval Mechanism.</li></ol>
-						</li>
-						</ol>
-						<h3><u>2. Accident and Incident Reporting Application</u></h3>
-						<ol>
-						<li>Developed a Progressive Web Application + Android app. Backend – Flask, Database – MySQL, Frontend – Material Design, Javascript.</li>
-						<li>Application features -
-						<ol>
-						<li>Progressive Web App -
-						<ol>
-						<li>Worked on any device, taking advantage of any features available on the user’s device and browser.</li>
-						<li>Instant loading.</li>
-						<li>Responsive.</li>
-						<li>Felt like a mobile app with app-style interactions.</li>
-						<li>Served via HTTPS ensuring that the content was securely delivered.</li>
-						<li>Allowed users to install the web app as a native iOS/android app on their home screen.</li></ol>
-						</li>
-						<li>Allowed users to take pictures directly from their phones/tablets.</li></ol>
-						</li>
-						<li>The Android app used a WebView to create a wrapper around the web application along with Android's Native elements, allowing
-						a user to access their device's hardware to take pictures and videos. Also, helped make the app maintainable as just the
-						code for the web application needed to be updated when a change was required.</li>
-						</ol>
-						<h3><u>3. IoT application</u></h3>
-						<ol>
-						<li>Connected lab equipment that needed monitoring to the network via Raspberry Pis.</li>
-						<li>Created a web application that allowed the chemists to set up a schedule and an interval (for each data point that needed
-						to be captured) at the start of their experiments. The web application would fire commands at the instrument and grab data
-						at specified time intervals, till it reached the end of the schedule.</li>
-						<li>Visualized multiple data points in real-time using HighCharts JavaScript library.</li>
-						<li>Detailed custom reports for captured data.</li>
-						</ol>
-						<h3><u>4. Controlled Chemical Administration application + API</u></h3>
-						<ol>
-						<li>Developed a Flask based web application to allow the registration and flagging of chemical compounds.</li>
-						<li>Customized reports generation in multiple formats.</li>
-						<li>Search by multiple criteria.</li>
-						<li>User friendly design.</li>
-						<li>REST API to allow the bulk registration, flagging and updating of chemical compounds.</li>
-						</ol>
-						<h3><u>5. REST API Boilerplate Template</u></h3>
-						<ol>
-						<li>Developed a sample end-to-end REST API in Python.</li>
-						<li>Set company standards for developing REST APIs that followed the Best Practices like versioning, validation, meaning HTTP responses, SSL etc.</li>
-						<li>OAuth2 authorization and authentication.</li>
-						<li>OpenAPI Specification</li>
-						<li>Swagger Documentation</li>
-						</ol>
-						<h3><u>6. COSHH (Control Of Substances Hazardous to Health) application</u></h3>
-						<ol>
-						<li>Developed a web application to automate the workflow of filling paper Risk Assessment forms by chemists when starting a new experiment.</li>
-						<li>Well-designed UI to accommodate lots of dynamic form fields inside a page.</li>
-						<li>PDF generation.</li>
-						<li>Experiment Approval Mechanism.</li>
-						<li>Form review and sign-off process.</li>
-						<li>Batch form sign-off feature to review and sign multiple forms at once.</li>
-						</ol>
-						<h3><u>7. Barcode Scanner API</u></h3>
-						<ol>
-							<li>Built a REST API allowing web applications to interact with the server embedded in barcode scanners using python's socket
-							library.</li>
-						</ol>
-						<h3>
-							<u>8. Genomics Data Platform</u>
-						</h3>
-						<ol>
-							<li>Worked on a genetics and genomics data platform using Flask and Elasticsearch as the backend and AngularJS as the frontend.</li>
-							<li>Set up multiple AWS instances from scratch, installing and configuring Elasticsearch, PostgreSQL, Node, flask etc.</li>
-							<li>Downloaded, cleaned and integrated big data from multiple sources for target identification and prioritization.</li>
-							<li>Created data analysis and visualizations using tools like pandas, json, D3, numpy etc.</li>
-						</ol>
-		      </div>
-		    </section>
-		    <footer class="modal-card-foot">
-		      <button class="button is-success" id="close-modal-1">Close</button>
-		    </footer>
-		  </div>
-		</div>
-	</main>
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-<script>
-	$(document).ready(function () {
-		setTimeout(function () {
-			$('#preloader').remove()
-		}, 450);
-	});
-
-	$("#display-modal-1").click(function() {
-	  $("#modal-1").addClass("is-active");
-	});
-
-	$("#close-modal-1").click(function() {
-	  $("#modal-1").removeClass("is-active");
-	});
-</script>
-
+  <script>
+    $('#loadmore').click(function () {
+      $('#other-projects-1').show("fast");
+      $('#loadmore').hide();
+    });
+  </script>
 </body>
 
 </html>
